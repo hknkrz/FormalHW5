@@ -1,0 +1,1562 @@
+        -:    0:Source:/home/hkn_krz/formalHW5/Source.hpp
+        -:    0:Graph:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcno
+        -:    0:Data:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#ifndef FORMALHW5__SOURCE_H_
+        -:    3:#define FORMALHW5__SOURCE_H_
+        -:    4:#include <iostream>
+        -:    5:#include <iterator>
+        -:    6:#include <map>
+        -:    7:#include <queue>
+        -:    8:#include <set>
+        -:    9:#include <stack>
+        -:   10:#include <vector>
+        -:   11:
+        -:   12:class Authomat {
+        -:   13: public:
+        -:   14:  static int max_cond_;
+        -:   15:  static int min_cond_;
+        -:   16:
+function _ZN8AuthomatC2Ev called 7 returned 100% blocks executed 100%
+        7:   17:  Authomat() = default;
+        7:   17-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+        -:   18:
+function _ZN8Authomat5BuildERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 17 returned 53% blocks executed 76%
+       17:   19:  static Authomat *Build(const std::string &reg_str) {
+       25:   20:    std::stack<Authomat *> auth_stack;
+       17:   20-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   20-block  1
+call    3 returned 8
+      204:   21:    for (char element : reg_str) {
+       17:   21-block  0
+call    0 returned 17
+call    1 returned 17
+      204:   21-block  1
+call    2 returned 204
+branch  3 taken 194 (fallthrough)
+branch  4 taken 10
+      194:   21-block  2
+call    5 returned 194
+      187:   21-block  3
+call    6 returned 187
+      194:   22:      if (element == '*') {
+branch  0 taken 12 (fallthrough)
+branch  1 taken 182
+       12:   23:        if(auth_stack.empty()){
+       12:   23-block  0
+call    0 returned 12
+branch  1 taken 1 (fallthrough)
+branch  2 taken 11
+        1:   24:          throw std::invalid_argument("No matching operand for operation *");
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   24-block  1
+call    4 returned 1
+    $$$$$:   24-block  2
+call    5 never executed
+        -:   25:        }
+       11:   26:        auth_stack.top()->Iteration();
+       11:   26-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+      182:   27:      } else if (element == '+') {
+      182:   27-block  0
+branch  0 taken 16 (fallthrough)
+branch  1 taken 166
+       16:   28:        if(auth_stack.empty()){
+       16:   28-block  0
+call    0 returned 16
+branch  1 taken 1 (fallthrough)
+branch  2 taken 15
+        1:   29:          throw std::invalid_argument("No matching operands for operation +");
+        1:   29-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   29-block  1
+call    4 returned 1
+    $$$$$:   29-block  2
+call    5 never executed
+        -:   30:        }
+       15:   31:        Authomat *first = auth_stack.top();
+       15:   31-block  0
+call    0 returned 15
+       15:   32:        auth_stack.pop();
+call    0 returned 15
+       15:   33:        if(auth_stack.empty()){
+call    0 returned 15
+branch  1 taken 1 (fallthrough)
+branch  2 taken 14
+        1:   34:          throw std::invalid_argument("No matching operands for operation +");
+        1:   34-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   34-block  1
+call    4 returned 1
+    $$$$$:   34-block  2
+call    5 never executed
+        -:   35:        }
+       14:   36:        Authomat *second = auth_stack.top();
+       14:   36-block  0
+call    0 returned 14
+       14:   37:        auth_stack.pop();
+call    0 returned 14
+       14:   38:        first->Plus(second);
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:   39:        auth_stack.push(first);
+       14:   39-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+      166:   40:      } else if (element == '.') {
+      166:   40-block  0
+branch  0 taken 70 (fallthrough)
+branch  1 taken 96
+       70:   41:        if(auth_stack.empty()){
+       70:   41-block  0
+call    0 returned 70
+branch  1 taken 1 (fallthrough)
+branch  2 taken 69
+        1:   42:          throw std::invalid_argument("No matching operands for operation .");
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   42-block  1
+call    4 returned 1
+    $$$$$:   42-block  2
+call    5 never executed
+        -:   43:        }
+       69:   44:        Authomat *first = auth_stack.top();
+       69:   44-block  0
+call    0 returned 69
+       69:   45:        auth_stack.pop();
+call    0 returned 69
+       69:   46:        if(auth_stack.empty()){
+call    0 returned 69
+branch  1 taken 2 (fallthrough)
+branch  2 taken 67
+        2:   47:          throw std::invalid_argument("No matching operands for operation .");
+        2:   47-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   47-block  1
+call    4 returned 2
+    $$$$$:   47-block  2
+call    5 never executed
+        -:   48:        }
+       67:   49:        Authomat *second = auth_stack.top();
+       67:   49-block  0
+call    0 returned 67
+       67:   50:        auth_stack.pop();
+call    0 returned 67
+       67:   51:        second->Concat(first);
+call    0 returned 67
+branch  1 taken 67 (fallthrough)
+branch  2 taken 0 (throw)
+       67:   52:        auth_stack.push(second);
+       67:   52-block  0
+call    0 returned 67
+branch  1 taken 67 (fallthrough)
+branch  2 taken 0 (throw)
+       96:   53:      } else if (element == 'a' || element == 'b' || element == 'c' || element == '1') {
+       96:   53-block  0
+branch  0 taken 60 (fallthrough)
+branch  1 taken 36
+       60:   53-block  1
+branch  2 taken 30 (fallthrough)
+branch  3 taken 30
+       30:   53-block  2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 29
+        1:   53-block  3
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+       95:   54:        auto *cur = new Authomat(element);
+       95:   54-block  0
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+       95:   54-block  1
+call    3 returned 95
+branch  4 taken 95 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   54-block  2
+call    6 never executed
+       95:   55:        auth_stack.push(cur);
+       95:   55-block  0
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+       95:   55-block  1
+        -:   56:      }
+        -:   57:      else{
+        1:   58:        throw std::invalid_argument(std::string("Wrong symbol in regular expression- ") + element );
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   58-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   58-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   58-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   58-block  4
+call   15 never executed
+    $$$$$:   58-block  5
+    $$$$$:   58-block  6
+call   16 never executed
+    $$$$$:   58-block  7
+    $$$$$:   58-block  8
+call   17 never executed
+    $$$$$:   58-block  9
+    $$$$$:   58-block 10
+call   18 never executed
+        -:   59:      }
+        -:   60:    }
+       10:   61:    if(auth_stack.size() > 1){
+       10:   61-block  0
+call    0 returned 10
+branch  1 taken 1 (fallthrough)
+branch  2 taken 9
+        1:   62:      throw std::invalid_argument("Expected operand");
+        1:   62-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   62-block  1
+call    4 returned 1
+    $$$$$:   62-block  2
+call    5 never executed
+        -:   63:    }
+       18:   64:    return auth_stack.top();
+        9:   64-block  0
+call    0 returned 9
+call    1 returned 9
+        9:   64-block  1
+        -:   65:  }
+        -:   66:  typedef std::multimap<int, std::pair<char, int>>::iterator DeltaIter;
+        -:   67:
+function _ZN8Authomat6DelEpsEv called 9 returned 100% blocks executed 89%
+        9:   68:  Authomat *DelEps() {
+      207:   69:    for (auto cond : conditions_) {
+        9:   69-block  0
+call    0 returned 9
+call    1 returned 9
+      207:   69-block  1
+call    2 returned 207
+branch  3 taken 198 (fallthrough)
+branch  4 taken 9
+      198:   69-block  2
+call    5 returned 198
+      198:   69-block  3
+call    6 returned 198
+      198:   70:      auto itr1 = delta_.lower_bound(cond);
+call    0 returned 198
+branch  1 taken 198 (fallthrough)
+branch  2 taken 0 (throw)
+      198:   71:      auto itr2 = delta_.upper_bound(cond);
+      198:   71-block  0
+call    0 returned 198
+branch  1 taken 198 (fallthrough)
+branch  2 taken 0 (throw)
+      644:   72:      while (itr1 != itr2) {
+      644:   72-block  0
+call    0 returned 644
+branch  1 taken 446 (fallthrough)
+branch  2 taken 198
+      446:   72-block  1
+        -:   73:
+      446:   74:        if (itr1->second.first == '1') {
+      446:   74-block  0
+call    0 returned 446
+branch  1 taken 197 (fallthrough)
+branch  2 taken 249
+      197:   75:          if (exit_.find(itr1->second.second) != exit_.end()) {
+      197:   75-block  0
+call    0 returned 197
+call    1 returned 197
+call    2 returned 197
+branch  3 taken 197 (fallthrough)
+branch  4 taken 0 (throw)
+      197:   75-block  1
+call    5 returned 197
+branch  6 taken 26 (fallthrough)
+branch  7 taken 171
+    $$$$$:   75-block  2
+       26:   76:            exit_.insert(cond);
+       26:   76-block  0
+call    0 returned 26
+branch  1 taken 26 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   77:          }
+      197:   78:          auto itr_next1 = delta_.lower_bound(itr1->second.second);
+      197:   78-block  0
+call    0 returned 197
+call    1 returned 197
+branch  2 taken 197 (fallthrough)
+branch  3 taken 0 (throw)
+      197:   79:          auto itr_next2 = delta_.upper_bound(itr1->second.second);
+      197:   79-block  0
+call    0 returned 197
+call    1 returned 197
+branch  2 taken 197 (fallthrough)
+branch  3 taken 0 (throw)
+      431:   80:          while (itr_next1 != itr_next2) {
+      431:   80-block  0
+call    0 returned 431
+branch  1 taken 234 (fallthrough)
+branch  2 taken 197
+        -:   81:
+      234:   82:            delta_.insert({cond, std::make_pair(itr_next1->second.first, itr_next1->second.second)});
+      234:   82-block  0
+call    0 returned 234
+call    1 returned 234
+call    2 returned 234
+branch  3 taken 234 (fallthrough)
+branch  4 taken 0 (throw)
+      234:   82-block  1
+call    5 returned 234
+call    6 returned 234
+branch  7 taken 234 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   82-block  2
+    $$$$$:   82-block  3
+        -:   83:
+      234:   84:            ++itr_next1;
+      234:   84-block  0
+call    0 returned 234
+        -:   85:          }
+      197:   86:          auto old_itr = itr1;
+      197:   87:          ++itr1;
+      197:   87-block  0
+call    0 returned 197
+      197:   88:          delta_.erase(old_itr);
+call    0 returned 197
+branch  1 taken 197 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   89:        } else {
+      249:   90:          ++itr1;
+      249:   90-block  0
+call    0 returned 249
+        -:   91:        }
+        -:   92:      }
+        -:   93:    }
+        9:   94:    return this;
+        9:   94-block  0
+        9:   94-block  1
+        -:   95:  }
+        -:   96:
+function _ZN8Authomat9DetermineEv called 7 returned 100% blocks executed 71%
+        7:   97:  Authomat *Determine() {
+       14:   98:    std::queue<std::set<int>> cur_queue;
+        7:   98-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 7
+    $$$$$:   98-block  1
+call    4 never executed
+        7:   99:    cur_queue.push({this->start_});
+        7:   99-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:   99-block  1
+call    4 returned 7
+branch  5 taken 7 (fallthrough)
+branch  6 taken 0 (throw)
+        7:   99-block  2
+call    7 returned 7
+call    8 returned 7
+    $$$$$:   99-block  3
+call    9 never executed
+    $$$$$:   99-block  4
+    $$$$$:   99-block  5
+call   10 never executed
+    $$$$$:   99-block  6
+    $$$$$:   99-block  7
+    $$$$$:   99-block  8
+        7:  100:    auto ans = new Authomat();
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  100-block  0
+call    3 returned 7
+        7:  101:    Authomat &det_auth = *ans;
+        7:  102:    det_auth.conditions_.push_back({0});
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  102-block  0
+        7:  103:    det_auth.start_ = 0;
+        7:  104:    if (exit_.find(start_) != exit_.end()) {
+        7:  104-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:  104-block  1
+call    4 returned 7
+branch  5 taken 1 (fallthrough)
+branch  6 taken 6
+    $$$$$:  104-block  2
+        1:  105:      det_auth.exit_.insert(det_auth.start_);
+        1:  105-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  106:    }
+        -:  107:
+        7:  108:    std::map<std::set<int>, std::pair<int, bool>> new_conds;
+        7:  108-block  0
+call    0 returned 7
+    $$$$$:  108-block  1
+call    1 never executed
+        7:  109:    int conds_iter = 0;
+        7:  110:    DeltaIter set_itr;
+call    0 returned 7
+        7:  111:    new_conds.insert({{this->start_}, std::make_pair(conds_iter, true)});
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:  111-block  0
+call    4 returned 7
+branch  5 taken 7 (fallthrough)
+branch  6 taken 0 (throw)
+        7:  111-block  1
+call    7 returned 7
+branch  8 taken 7 (fallthrough)
+branch  9 taken 0 (throw)
+        7:  111-block  2
+call   10 returned 7
+branch 11 taken 7 (fallthrough)
+branch 12 taken 0 (throw)
+        7:  111-block  3
+call   13 returned 7
+call   14 returned 7
+call   15 returned 7
+    $$$$$:  111-block  4
+call   16 never executed
+    $$$$$:  111-block  5
+    $$$$$:  111-block  6
+    $$$$$:  111-block  7
+    $$$$$:  111-block  8
+call   17 never executed
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+call   18 never executed
+    $$$$$:  111-block 11
+    $$$$$:  111-block 12
+    $$$$$:  111-block 13
+        7:  112:    ++conds_iter;
+      108:  113:    while (!cur_queue.empty()) {
+      108:  113-block  0
+call    0 returned 108
+branch  1 taken 101 (fallthrough)
+branch  2 taken 7
+      202:  114:      std::set<int> a_tr = {};
+      101:  114-block  0
+call    0 returned 101
+call    1 returned 101
+    $$$$$:  114-block  1
+call    2 never executed
+      202:  115:      std::set<int> b_tr = {};
+call    0 returned 101
+call    1 returned 101
+    $$$$$:  115-block  0
+call    2 never executed
+      202:  116:      std::set<int> c_tr = {};
+call    0 returned 101
+call    1 returned 101
+    $$$$$:  116-block  0
+call    2 never executed
+      101:  117:      bool is_exiting[4] = {false, false, false};
+      101:  118:      std::set<int>::iterator itr;
+call    0 returned 101
+      210:  119:      for (itr = cur_queue.front().begin(); itr != cur_queue.front().end(); ++itr) {
+call    0 returned 101
+call    1 returned 101
+      210:  119-block  0
+call    2 returned 210
+call    3 returned 210
+call    4 returned 210
+branch  5 taken 109 (fallthrough)
+branch  6 taken 101
+      109:  119-block  1
+call    7 returned 109
+      109:  120:        auto itr1 = delta_.lower_bound(*itr);
+      109:  120-block  0
+call    0 returned 109
+call    1 returned 109
+branch  2 taken 109 (fallthrough)
+branch  3 taken 0 (throw)
+      109:  121:        auto itr2 = delta_.upper_bound(*itr);
+      109:  121-block  0
+call    0 returned 109
+call    1 returned 109
+branch  2 taken 109 (fallthrough)
+branch  3 taken 0 (throw)
+      261:  122:        while (itr1 != itr2) {
+      261:  122-block  0
+call    0 returned 261
+branch  1 taken 152 (fallthrough)
+branch  2 taken 109
+      152:  123:          switch (itr1->second.first) {
+      152:  123-block  0
+call    0 returned 152
+branch  1 taken 64
+branch  2 taken 45
+branch  3 taken 43
+branch  4 taken 0
+       64:  124:            case 'a':
+       64:  125:              a_tr.insert(itr1->second.second);
+       64:  125-block  0
+call    0 returned 64
+call    1 returned 64
+branch  2 taken 64 (fallthrough)
+branch  3 taken 0 (throw)
+       64:  126:              if (exit_.find(itr1->second.second) != exit_.end()) {
+       64:  126-block  0
+call    0 returned 64
+call    1 returned 64
+call    2 returned 64
+branch  3 taken 64 (fallthrough)
+branch  4 taken 0 (throw)
+       64:  126-block  1
+call    5 returned 64
+branch  6 taken 8 (fallthrough)
+branch  7 taken 56
+    $$$$$:  126-block  2
+        8:  127:                is_exiting[0] = true;
+        8:  127-block  0
+        -:  128:              }
+       64:  129:              break;
+       64:  129-block  0
+       45:  130:            case 'b':
+       45:  131:              b_tr.insert(itr1->second.second);
+       45:  131-block  0
+call    0 returned 45
+call    1 returned 45
+branch  2 taken 45 (fallthrough)
+branch  3 taken 0 (throw)
+       45:  132:              if (exit_.find(itr1->second.second) != exit_.end()) {
+       45:  132-block  0
+call    0 returned 45
+call    1 returned 45
+call    2 returned 45
+branch  3 taken 45 (fallthrough)
+branch  4 taken 0 (throw)
+       45:  132-block  1
+call    5 returned 45
+branch  6 taken 6 (fallthrough)
+branch  7 taken 39
+    $$$$$:  132-block  2
+        6:  133:                is_exiting[1] = true;
+        6:  133-block  0
+        -:  134:              }
+       45:  135:              break;
+       45:  135-block  0
+       43:  136:            case 'c':
+       43:  137:              c_tr.insert(itr1->second.second);
+       43:  137-block  0
+call    0 returned 43
+call    1 returned 43
+branch  2 taken 43 (fallthrough)
+branch  3 taken 0 (throw)
+       43:  138:              if (exit_.find(itr1->second.second) != exit_.end()) {
+       43:  138-block  0
+call    0 returned 43
+call    1 returned 43
+call    2 returned 43
+branch  3 taken 43 (fallthrough)
+branch  4 taken 0 (throw)
+       43:  138-block  1
+call    5 returned 43
+branch  6 taken 18 (fallthrough)
+branch  7 taken 25
+    $$$$$:  138-block  2
+       18:  139:                is_exiting[2] = true;
+       18:  139-block  0
+        -:  140:              }
+       43:  141:              break;
+       43:  141-block  0
+        -:  142:          }
+      152:  143:          ++itr1;
+      152:  143-block  0
+call    0 returned 152
+        -:  144:        }
+        -:  145:      }
+      202:  146:      std::set<int> aa = cur_queue.front();
+      101:  146-block  0
+call    0 returned 101
+call    1 returned 101
+branch  2 taken 101 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 101
+    $$$$$:  146-block  1
+call    5 never executed
+      101:  147:      int cur_cond = new_conds[cur_queue.front()].first;
+      101:  147-block  0
+call    0 returned 101
+call    1 returned 101
+branch  2 taken 101 (fallthrough)
+branch  3 taken 0 (throw)
+      101:  148:      if ((!a_tr.empty())) {
+      101:  148-block  0
+call    0 returned 101
+branch  1 taken 51 (fallthrough)
+branch  2 taken 50
+       51:  149:        if (new_conds.find(a_tr) == new_conds.end()) {
+       51:  149-block  0
+call    0 returned 51
+call    1 returned 51
+branch  2 taken 51 (fallthrough)
+branch  3 taken 0 (throw)
+       51:  149-block  1
+call    4 returned 51
+branch  5 taken 22 (fallthrough)
+branch  6 taken 29
+    $$$$$:  149-block  2
+       22:  150:          new_conds.insert({a_tr, std::make_pair(conds_iter, false)});
+       22:  150-block  0
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:  150-block  1
+call    3 returned 22
+branch  4 taken 22 (fallthrough)
+branch  5 taken 0 (throw)
+       22:  150-block  2
+call    6 returned 22
+branch  7 taken 22 (fallthrough)
+branch  8 taken 0 (throw)
+       22:  150-block  3
+call    9 returned 22
+    $$$$$:  150-block  4
+call   10 never executed
+    $$$$$:  150-block  5
+    $$$$$:  150-block  6
+    $$$$$:  150-block  7
+       22:  151:          ++conds_iter;
+       22:  152:          det_auth.conditions_.push_back(new_conds[a_tr].first);
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:  152-block  0
+call    3 returned 22
+branch  4 taken 22 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  153:        }
+       51:  154:        det_auth.delta_.insert({cur_cond, std::make_pair('a', new_conds[a_tr].first)});
+       51:  154-block  0
+call    0 returned 51
+branch  1 taken 51 (fallthrough)
+branch  2 taken 0 (throw)
+       51:  154-block  1
+call    3 returned 51
+branch  4 taken 51 (fallthrough)
+branch  5 taken 0 (throw)
+       51:  154-block  2
+call    6 returned 51
+call    7 returned 51
+branch  8 taken 51 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:  154-block  3
+    $$$$$:  154-block  4
+    $$$$$:  154-block  5
+       51:  155:        if (is_exiting[0]) {
+       51:  155-block  0
+branch  0 taken 8 (fallthrough)
+branch  1 taken 43
+        8:  156:          det_auth.exit_.insert(new_conds[a_tr].first);
+        8:  156-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:  156-block  1
+call    3 returned 8
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  157:        }
+       51:  158:        if ((new_conds.find(a_tr) == new_conds.end()) || !new_conds[a_tr].second) {
+       51:  158-block  0
+call    0 returned 51
+call    1 returned 51
+branch  2 taken 51 (fallthrough)
+branch  3 taken 0 (throw)
+       51:  158-block  1
+call    4 returned 51
+branch  5 taken 51 (fallthrough)
+branch  6 taken 0
+       51:  158-block  2
+call    7 returned 51
+branch  8 taken 51 (fallthrough)
+branch  9 taken 0 (throw)
+       51:  158-block  3
+branch 10 taken 30 (fallthrough)
+branch 11 taken 21
+       30:  158-block  4
+       21:  158-block  5
+       51:  158-block  6
+branch 12 taken 30 (fallthrough)
+branch 13 taken 21
+    $$$$$:  158-block  7
+    $$$$$:  158-block  8
+       30:  159:          cur_queue.push(a_tr);
+       30:  159-block  0
+call    0 returned 30
+branch  1 taken 30 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  160:        }
+        -:  161:      }
+      101:  162:      if ((!b_tr.empty()) && ((new_conds.find(b_tr) == new_conds.end()) || !new_conds[b_tr].second)) {
+      101:  162-block  0
+call    0 returned 101
+branch  1 taken 41 (fallthrough)
+branch  2 taken 60
+       41:  162-block  1
+call    3 returned 41
+call    4 returned 41
+branch  5 taken 41 (fallthrough)
+branch  6 taken 0 (throw)
+       41:  162-block  2
+call    7 returned 41
+branch  8 taken 18 (fallthrough)
+branch  9 taken 23
+       18:  162-block  3
+call   10 returned 18
+branch 11 taken 18 (fallthrough)
+branch 12 taken 0 (throw)
+       18:  162-block  4
+branch 13 taken 8 (fallthrough)
+branch 14 taken 10
+       31:  162-block  5
+       70:  162-block  6
+      101:  162-block  7
+branch 15 taken 31 (fallthrough)
+branch 16 taken 70
+    $$$$$:  162-block  8
+    $$$$$:  162-block  9
+       31:  163:        if (new_conds.find(b_tr) == new_conds.end()) {
+       31:  163-block  0
+call    0 returned 31
+call    1 returned 31
+branch  2 taken 31 (fallthrough)
+branch  3 taken 0 (throw)
+       31:  163-block  1
+call    4 returned 31
+branch  5 taken 23 (fallthrough)
+branch  6 taken 8
+    $$$$$:  163-block  2
+       23:  164:          new_conds.insert({b_tr, std::make_pair(conds_iter, false)});
+       23:  164-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:  164-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:  164-block  2
+call    6 returned 23
+branch  7 taken 23 (fallthrough)
+branch  8 taken 0 (throw)
+       23:  164-block  3
+call    9 returned 23
+    $$$$$:  164-block  4
+call   10 never executed
+    $$$$$:  164-block  5
+    $$$$$:  164-block  6
+    $$$$$:  164-block  7
+       23:  165:          ++conds_iter;
+       23:  166:          det_auth.conditions_.push_back(new_conds[b_tr].first);
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:  166-block  0
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  167:        }
+       31:  168:        det_auth.delta_.insert({cur_cond, std::make_pair('b', new_conds[b_tr].first)});
+       31:  168-block  0
+call    0 returned 31
+branch  1 taken 31 (fallthrough)
+branch  2 taken 0 (throw)
+       31:  168-block  1
+call    3 returned 31
+branch  4 taken 31 (fallthrough)
+branch  5 taken 0 (throw)
+       31:  168-block  2
+call    6 returned 31
+call    7 returned 31
+branch  8 taken 31 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:  168-block  3
+    $$$$$:  168-block  4
+    $$$$$:  168-block  5
+       31:  169:        if (is_exiting[1]) {
+       31:  169-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 25
+        6:  170:          det_auth.exit_.insert(new_conds[b_tr].first);
+        6:  170-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  170-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  171:        }
+       31:  172:        cur_queue.push(b_tr);
+       31:  172-block  0
+call    0 returned 31
+branch  1 taken 31 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  173:      }
+        -:  174:
+      101:  175:      if ((!c_tr.empty()) && ((new_conds.find(c_tr) == new_conds.end()) || !new_conds[c_tr].second)) {
+      101:  175-block  0
+call    0 returned 101
+branch  1 taken 40 (fallthrough)
+branch  2 taken 61
+       40:  175-block  1
+call    3 returned 40
+call    4 returned 40
+branch  5 taken 40 (fallthrough)
+branch  6 taken 0 (throw)
+       40:  175-block  2
+call    7 returned 40
+branch  8 taken 17 (fallthrough)
+branch  9 taken 23
+       17:  175-block  3
+call   10 returned 17
+branch 11 taken 17 (fallthrough)
+branch 12 taken 0 (throw)
+       17:  175-block  4
+branch 13 taken 10 (fallthrough)
+branch 14 taken 7
+       33:  175-block  5
+       68:  175-block  6
+      101:  175-block  7
+branch 15 taken 33 (fallthrough)
+branch 16 taken 68
+    $$$$$:  175-block  8
+    $$$$$:  175-block  9
+       33:  176:        if (new_conds.find(c_tr) == new_conds.end()) {
+       33:  176-block  0
+call    0 returned 33
+call    1 returned 33
+branch  2 taken 33 (fallthrough)
+branch  3 taken 0 (throw)
+       33:  176-block  1
+call    4 returned 33
+branch  5 taken 23 (fallthrough)
+branch  6 taken 10
+    $$$$$:  176-block  2
+       23:  177:          new_conds.insert({c_tr, std::make_pair(conds_iter, false)});
+       23:  177-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:  177-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:  177-block  2
+call    6 returned 23
+branch  7 taken 23 (fallthrough)
+branch  8 taken 0 (throw)
+       23:  177-block  3
+call    9 returned 23
+    $$$$$:  177-block  4
+call   10 never executed
+    $$$$$:  177-block  5
+    $$$$$:  177-block  6
+    $$$$$:  177-block  7
+       23:  178:          ++conds_iter;
+       23:  179:          det_auth.conditions_.push_back(new_conds[c_tr].first);
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:  179-block  0
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  180:        }
+       33:  181:        det_auth.delta_.insert({cur_cond, std::make_pair('c', new_conds[c_tr].first)});
+       33:  181-block  0
+call    0 returned 33
+branch  1 taken 33 (fallthrough)
+branch  2 taken 0 (throw)
+       33:  181-block  1
+call    3 returned 33
+branch  4 taken 33 (fallthrough)
+branch  5 taken 0 (throw)
+       33:  181-block  2
+call    6 returned 33
+call    7 returned 33
+branch  8 taken 33 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:  181-block  3
+    $$$$$:  181-block  4
+    $$$$$:  181-block  5
+       33:  182:        if (is_exiting[2]) {
+       33:  182-block  0
+branch  0 taken 15 (fallthrough)
+branch  1 taken 18
+       15:  183:          det_auth.exit_.insert(new_conds[c_tr].first);
+       15:  183-block  0
+call    0 returned 15
+branch  1 taken 15 (fallthrough)
+branch  2 taken 0 (throw)
+       15:  183-block  1
+call    3 returned 15
+branch  4 taken 15 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  184:        }
+       33:  185:        cur_queue.push(c_tr);
+       33:  185-block  0
+call    0 returned 33
+branch  1 taken 33 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  186:      }
+      101:  187:      new_conds[cur_queue.front()].second = true;
+      101:  187-block  0
+call    0 returned 101
+call    1 returned 101
+branch  2 taken 101 (fallthrough)
+branch  3 taken 0 (throw)
+      101:  188:      cur_queue.pop();
+      101:  188-block  0
+call    0 returned 101
+        -:  189:    }
+        7:  190:    max_cond_ = conds_iter;
+       14:  191:    return ans;
+        7:  191-block  0
+call    0 returned 7
+        7:  191-block  1
+        -:  192:  };
+        -:  193:
+function _ZN8AuthomatC2Ec called 95 returned 100% blocks executed 52%
+       95:  194:  explicit Authomat(char letter) {
+       95:  194-block  0
+call    0 returned 95
+call    1 returned 95
+call    2 returned 95
+    $$$$$:  194-block  1
+call    3 never executed
+    $$$$$:  194-block  2
+call    4 never executed
+    $$$$$:  194-block  3
+call    5 never executed
+       95:  195:    ++max_cond_;
+        -:  196:
+       95:  197:    delta_.insert(std::make_pair(max_cond_, std::make_pair(letter, max_cond_ + 1)));
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+       95:  197-block  0
+call    3 returned 95
+branch  4 taken 95 (fallthrough)
+branch  5 taken 0 (throw)
+       95:  197-block  1
+call    6 returned 95
+branch  7 taken 95 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:  197-block  2
+    $$$$$:  197-block  3
+    $$$$$:  197-block  4
+        -:  198:
+       95:  199:    start_ = max_cond_;
+       95:  200:    conditions_.push_back(max_cond_);
+       95:  200-block  0
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+       95:  201:    conditions_.push_back(max_cond_ + 1);
+       95:  201-block  0
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  201-block  1
+       95:  202:    exit_.insert(max_cond_ + 1);
+       95:  202-block  0
+call    0 returned 95
+branch  1 taken 95 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  202-block  1
+       95:  203:    ++max_cond_;
+       95:  204:  }
+       95:  204-block  0
+function _ZN8Authomat4PlusEPS_ called 14 returned 100% blocks executed 75%
+       14:  205:  Authomat *Plus(Authomat *other) {
+       14:  206:    --min_cond_;
+       14:  207:    delta_.insert(other->delta_.begin(), other->delta_.end());
+       14:  207-block  0
+call    0 returned 14
+call    1 returned 14
+call    2 returned 14
+       14:  208:    delta_.insert({min_cond_, std::make_pair('1', start_)});
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:  208-block  0
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 14 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:  208-block  1
+    $$$$$:  208-block  2
+    $$$$$:  208-block  3
+call    7 never executed
+       14:  209:    delta_.insert({min_cond_, std::make_pair('1', other->start_)});
+       14:  209-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:  209-block  1
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 14 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:  209-block  2
+    $$$$$:  209-block  3
+    $$$$$:  209-block  4
+call    7 never executed
+        -:  210:
+       14:  211:    conditions_.push_back(min_cond_);
+       14:  211-block  0
+call    0 returned 14
+       14:  212:    conditions_.insert(conditions_.end(), other->conditions_.begin(), other->conditions_.end());
+call    0 returned 14
+call    1 returned 14
+call    2 returned 14
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 14 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:  212-block  0
+        -:  213:
+       14:  214:    exit_.insert(other->exit_.begin(), other->exit_.end());
+       14:  214-block  0
+call    0 returned 14
+call    1 returned 14
+call    2 returned 14
+        -:  215:
+       14:  216:    start_ = min_cond_;
+        -:  217:
+       14:  218:    return this;
+       14:  218-block  0
+        -:  219:  }
+function _ZN8Authomat9IterationEv called 11 returned 100% blocks executed 71%
+       11:  220:  Authomat *Iteration() {
+       11:  221:    --min_cond_;
+       11:  222:    conditions_.push_back(min_cond_);
+       11:  222-block  0
+call    0 returned 11
+        -:  223:
+       11:  224:    delta_.insert({min_cond_, std::make_pair('1', start_)});
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  224-block  0
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 11 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:  224-block  1
+    $$$$$:  224-block  2
+    $$$$$:  224-block  3
+call    7 never executed
+       29:  225:    for (int element : exit_) {
+       11:  225-block  0
+call    0 returned 11
+call    1 returned 11
+       29:  225-block  1
+call    2 returned 29
+branch  3 taken 18 (fallthrough)
+branch  4 taken 11
+       18:  225-block  2
+call    5 returned 18
+       18:  226:      delta_.insert({element, std::make_pair('1', min_cond_)});
+call    0 returned 18
+branch  1 taken 18 (fallthrough)
+branch  2 taken 0 (throw)
+       18:  226-block  0
+call    3 returned 18
+call    4 returned 18
+branch  5 taken 18 (fallthrough)
+branch  6 taken 0 (throw)
+       18:  226-block  1
+call    7 returned 18
+    $$$$$:  226-block  2
+    $$$$$:  226-block  3
+    $$$$$:  226-block  4
+        -:  227:    }
+        -:  228:
+       11:  229:    exit_ = {min_cond_};
+       11:  229-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  230:    start_ = min_cond_;
+        -:  231:
+       11:  232:    return this;
+       11:  232-block  0
+       11:  232-block  1
+        -:  233:  }
+function _ZN8Authomat6ConcatEPS_ called 67 returned 100% blocks executed 81%
+       67:  234:  Authomat *Concat(Authomat *other) {
+      140:  235:    for (int element : exit_) {
+       67:  235-block  0
+call    0 returned 67
+call    1 returned 67
+      140:  235-block  1
+call    2 returned 140
+branch  3 taken 73 (fallthrough)
+branch  4 taken 67
+       73:  235-block  2
+call    5 returned 73
+       73:  236:      delta_.insert(std::make_pair(element, std::make_pair('1', other->start_)));
+call    0 returned 73
+branch  1 taken 73 (fallthrough)
+branch  2 taken 0 (throw)
+       73:  236-block  0
+call    3 returned 73
+branch  4 taken 73 (fallthrough)
+branch  5 taken 0 (throw)
+       73:  236-block  1
+call    6 returned 73
+branch  7 taken 73 (fallthrough)
+branch  8 taken 0 (throw)
+       73:  236-block  2
+call    9 returned 73
+    $$$$$:  236-block  3
+    $$$$$:  236-block  4
+    $$$$$:  236-block  5
+        -:  237:    }
+       67:  238:    delta_.insert(other->delta_.begin(), other->delta_.end());
+       67:  238-block  0
+call    0 returned 67
+call    1 returned 67
+call    2 returned 67
+        -:  239:
+       67:  240:    conditions_.insert(conditions_.end(), other->conditions_.begin(), other->conditions_.end());
+call    0 returned 67
+call    1 returned 67
+call    2 returned 67
+call    3 returned 67
+call    4 returned 67
+branch  5 taken 67 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:  240-block  0
+        -:  241:
+       67:  242:    exit_ = other->exit_;
+       67:  242-block  0
+call    0 returned 67
+        -:  243:
+       67:  244:    return this;
+       67:  244-block  0
+        -:  245:  }
+function _ZN8Authomat8FullAuthEv called 7 returned 100% blocks executed 75%
+        7:  246:  void FullAuth() {
+        7:  247:    conditions_.push_back(max_cond_);
+        7:  247-block  0
+call    0 returned 7
+       89:  248:    for (auto cond : conditions_) {
+call    0 returned 7
+call    1 returned 7
+       89:  248-block  0
+call    2 returned 89
+branch  3 taken 82 (fallthrough)
+branch  4 taken 7
+       82:  248-block  1
+call    5 returned 82
+call    6 returned 82
+       82:  249:      auto itr1 = delta_.lower_bound(cond);
+call    0 returned 82
+branch  1 taken 82 (fallthrough)
+branch  2 taken 0 (throw)
+       82:  250:      auto itr2 = delta_.upper_bound(cond);
+       82:  250-block  0
+call    0 returned 82
+branch  1 taken 82 (fallthrough)
+branch  2 taken 0 (throw)
+      246:  251:      std::vector<bool> has_transit = {false, false, false};
+       82:  251-block  0
+call    0 returned 82
+call    1 returned 82
+branch  2 taken 82 (fallthrough)
+branch  3 taken 0 (throw)
+       82:  251-block  1
+call    4 returned 82
+    $$$$$:  251-block  2
+    $$$$$:  251-block  3
+    $$$$$:  251-block  4
+call    5 never executed
+      197:  252:      while (itr1 != itr2) {
+      197:  252-block  0
+call    0 returned 197
+branch  1 taken 115 (fallthrough)
+branch  2 taken 82
+      115:  253:        switch (itr1->second.first) {
+      115:  253-block  0
+call    0 returned 115
+branch  1 taken 51
+branch  2 taken 31
+branch  3 taken 33
+branch  4 taken 0
+       51:  254:          case 'a':
+       51:  255:            has_transit[0] = true;
+       51:  255-block  0
+call    0 returned 51
+call    1 returned 51
+       51:  256:            break;
+       31:  257:          case 'b':
+       31:  258:            has_transit[1] = true;
+       31:  258-block  0
+call    0 returned 31
+call    1 returned 31
+       31:  259:            break;
+       33:  260:          case 'c':
+       33:  261:            has_transit[2] = true;
+       33:  261-block  0
+call    0 returned 33
+call    1 returned 33
+       33:  262:            break;
+        -:  263:        }
+      115:  264:        ++itr1;
+      115:  264-block  0
+call    0 returned 115
+        -:  265:      }
+       82:  266:      if (!has_transit[0]) {
+       82:  266-block  0
+call    0 returned 82
+call    1 returned 82
+branch  2 taken 45 (fallthrough)
+branch  3 taken 37
+       45:  267:        delta_.insert({cond, std::make_pair('a', max_cond_)});
+       45:  267-block  0
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  267-block  1
+call    3 returned 45
+call    4 returned 45
+branch  5 taken 45 (fallthrough)
+branch  6 taken 0 (throw)
+       45:  267-block  2
+    $$$$$:  267-block  3
+    $$$$$:  267-block  4
+    $$$$$:  267-block  5
+        -:  268:      }
+       82:  269:      if (!has_transit[1]) {
+       82:  269-block  0
+call    0 returned 82
+call    1 returned 82
+branch  2 taken 56 (fallthrough)
+branch  3 taken 26
+       56:  270:        delta_.insert({cond, std::make_pair('b', max_cond_)});
+       56:  270-block  0
+call    0 returned 56
+branch  1 taken 56 (fallthrough)
+branch  2 taken 0 (throw)
+       56:  270-block  1
+call    3 returned 56
+call    4 returned 56
+branch  5 taken 56 (fallthrough)
+branch  6 taken 0 (throw)
+       56:  270-block  2
+    $$$$$:  270-block  3
+    $$$$$:  270-block  4
+    $$$$$:  270-block  5
+        -:  271:      }
+       82:  272:      if (!has_transit[2]) {
+       82:  272-block  0
+call    0 returned 82
+call    1 returned 82
+branch  2 taken 55 (fallthrough)
+branch  3 taken 27
+       55:  273:        delta_.insert({cond, std::make_pair('c', max_cond_)});
+       55:  273-block  0
+call    0 returned 55
+branch  1 taken 55 (fallthrough)
+branch  2 taken 0 (throw)
+       55:  273-block  1
+call    3 returned 55
+call    4 returned 55
+branch  5 taken 55 (fallthrough)
+branch  6 taken 0 (throw)
+       55:  273-block  2
+    $$$$$:  273-block  3
+    $$$$$:  273-block  4
+    $$$$$:  273-block  5
+        -:  274:      }
+        -:  275:    }
+        7:  276:  }
+        7:  276-block  0
+        -:  277:
+function _ZN8Authomat10SearchPathEci called 3 returned 100% blocks executed 83%
+        3:  278:  int SearchPath(char letter, int quantity) {
+        6:  279:    std::vector<int> check_cycle;
+        3:  279-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:  279-block  1
+call    2 never executed
+       28:  280:    for (auto element : conditions_) {
+call    0 returned 3
+call    1 returned 3
+       28:  280-block  0
+call    2 returned 28
+branch  3 taken 25 (fallthrough)
+branch  4 taken 3
+       25:  280-block  1
+call    5 returned 25
+       25:  281:      check_cycle.push_back(-1);
+call    0 returned 25
+branch  1 taken 25 (fallthrough)
+branch  2 taken 0 (throw)
+       25:  281-block  0
+call    3 returned 25
+    $$$$$:  281-block  1
+        -:  282:    }
+        6:  283:    std::queue<std::tuple<int, int, int>> cond_q;
+        3:  283-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  283-block  1
+call    3 returned 3
+    $$$$$:  283-block  2
+call    4 never executed
+        3:  284:    cond_q.push(std::make_tuple(start_, 0, 0));
+        3:  284-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  284-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  284-block  2
+    $$$$$:  284-block  3
+    $$$$$:  284-block  4
+    $$$$$:  284-block  5
+      407:  285:    while (!cond_q.empty()) {
+      407:  285-block  0
+call    0 returned 407
+branch  1 taken 406 (fallthrough)
+branch  2 taken 1
+        -:  286:
+      406:  287:      if (std::get<2>(cond_q.front()) == quantity && exit_.find(std::get<0>(cond_q.front())) != exit_.end()) {
+      406:  287-block  0
+call    0 returned 406
+call    1 returned 406
+branch  2 taken 64 (fallthrough)
+branch  3 taken 342
+       64:  287-block  1
+call    4 returned 64
+call    5 returned 64
+call    6 returned 64
+call    7 returned 64
+branch  8 taken 64 (fallthrough)
+branch  9 taken 0 (throw)
+       64:  287-block  2
+call   10 returned 64
+branch 11 taken 2 (fallthrough)
+branch 12 taken 62
+        2:  287-block  3
+      404:  287-block  4
+      406:  287-block  5
+branch 13 taken 2 (fallthrough)
+branch 14 taken 404
+    $$$$$:  287-block  6
+    $$$$$:  287-block  7
+        2:  288:        return std::get<1>(cond_q.front());
+        2:  288-block  0
+call    0 returned 2
+call    1 returned 2
+        -:  289:      }
+      404:  290:      auto itr1 = delta_.lower_bound(std::get<0>(cond_q.front()));
+      404:  290-block  0
+call    0 returned 404
+call    1 returned 404
+call    2 returned 404
+branch  3 taken 404 (fallthrough)
+branch  4 taken 0 (throw)
+      404:  291:      auto itr2 = delta_.upper_bound(std::get<0>(cond_q.front()));
+      404:  291-block  0
+call    0 returned 404
+call    1 returned 404
+call    2 returned 404
+branch  3 taken 404 (fallthrough)
+branch  4 taken 0 (throw)
+     1672:  292:      while (itr1 != itr2) {
+     1672:  292-block  0
+call    0 returned 1672
+branch  1 taken 1268 (fallthrough)
+branch  2 taken 404
+     1268:  293:        if (itr1->second.first == letter) {
+     1268:  293-block  0
+call    0 returned 1268
+branch  1 taken 417 (fallthrough)
+branch  2 taken 851
+      417:  294:          if (std::get<2>(cond_q.front()) + 1 <= quantity) {
+      417:  294-block  0
+call    0 returned 417
+call    1 returned 417
+branch  2 taken 355 (fallthrough)
+branch  3 taken 62
+      355:  295:            cond_q.push(std::make_tuple(itr1->second.second, std::get<1>(cond_q.front()) + 1, std::get<2>(cond_q.front()) + 1));
+      355:  295-block  0
+call    0 returned 355
+call    1 returned 355
+call    2 returned 355
+call    3 returned 355
+call    4 returned 355
+call    5 returned 355
+branch  6 taken 355 (fallthrough)
+branch  7 taken 0 (throw)
+      355:  295-block  1
+call    8 returned 355
+branch  9 taken 355 (fallthrough)
+branch 10 taken 0 (throw)
+      355:  295-block  2
+    $$$$$:  295-block  3
+    $$$$$:  295-block  4
+    $$$$$:  295-block  5
+        -:  296:          }
+        -:  297:        } else {
+      851:  298:          if (check_cycle[itr1->second.second] == -1) {
+      851:  298-block  0
+call    0 returned 851
+call    1 returned 851
+branch  2 taken 15 (fallthrough)
+branch  3 taken 836
+       15:  299:            check_cycle[itr1->second.second] = std::get<2>(cond_q.front());
+       15:  299-block  0
+call    0 returned 15
+call    1 returned 15
+call    2 returned 15
+call    3 returned 15
+       15:  300:            cond_q.push(std::make_tuple(itr1->second.second, std::get<1>(cond_q.front()) + 1, std::get<2>(cond_q.front())));
+call    0 returned 15
+call    1 returned 15
+call    2 returned 15
+call    3 returned 15
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  300-block  0
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  300-block  1
+    $$$$$:  300-block  2
+    $$$$$:  300-block  3
+        -:  301:          } else {
+      836:  302:            if (check_cycle[itr1->second.second] < std::get<2>(cond_q.front())) {
+      836:  302-block  0
+call    0 returned 836
+call    1 returned 836
+call    2 returned 836
+call    3 returned 836
+branch  4 taken 34 (fallthrough)
+branch  5 taken 802
+       34:  303:              check_cycle[itr1->second.second] = std::get<2>(cond_q.front());
+       34:  303-block  0
+call    0 returned 34
+call    1 returned 34
+call    2 returned 34
+call    3 returned 34
+       34:  304:              cond_q.push(std::make_tuple(itr1->second.second, std::get<1>(cond_q.front()) + 1, std::get<2>(cond_q.front())));
+call    0 returned 34
+call    1 returned 34
+call    2 returned 34
+call    3 returned 34
+call    4 returned 34
+call    5 returned 34
+branch  6 taken 34 (fallthrough)
+branch  7 taken 0 (throw)
+       34:  304-block  0
+call    8 returned 34
+branch  9 taken 34 (fallthrough)
+branch 10 taken 0 (throw)
+       34:  304-block  1
+    $$$$$:  304-block  2
+    $$$$$:  304-block  3
+        -:  305:            }
+        -:  306:          }
+        -:  307:        }
+     1268:  308:        ++itr1;
+     1268:  308-block  0
+call    0 returned 1268
+        -:  309:      }
+      404:  310:      cond_q.pop();
+      404:  310-block  0
+call    0 returned 404
+        -:  311:    }
+        1:  312:    return -1;
+        1:  312-block  0
+        -:  313:  }
+        -:  314:
+function _ZN8Authomat8GetCondsEv called 6 returned 100% blocks executed 100%
+        6:  315:  std::vector<int> * GetConds(){
+        6:  316:    return &conditions_;
+        6:  316-block  0
+        -:  317:  }
+function _ZN8Authomat8GetDeltaEv called 192 returned 100% blocks executed 100%
+      192:  318:  std::multimap<int, std::pair<char, int>> * GetDelta(){
+      192:  319:    return &delta_;
+      192:  319-block  0
+        -:  320:  }
+        -:  321: private:
+        -:  322:  int start_{};
+        -:  323:  std::vector<int> conditions_;
+        -:  324:  std::multimap<int, std::pair<char, int>> delta_;
+        -:  325:  std::set<int> exit_;
+        -:  326:};
+        -:  327:
+        -:  328:int Authomat::max_cond_ = 0;
+        -:  329:int Authomat::min_cond_ = 0;
+        -:  330:
+        -:  331:
+        -:  332:#endif//FORMALHW5__SOURCE_H_

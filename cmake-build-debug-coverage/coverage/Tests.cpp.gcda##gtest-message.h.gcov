@@ -1,0 +1,334 @@
+        -:    0:Source:/usr/include/gtest/gtest-message.h
+        -:    0:Graph:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcno
+        -:    0:Data:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2005, Google Inc.
+        -:    2:// All rights reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30://
+        -:   31:// The Google C++ Testing and Mocking Framework (Google Test)
+        -:   32://
+        -:   33:// This header file defines the Message class.
+        -:   34://
+        -:   35:// IMPORTANT NOTE: Due to limitation of the C++ language, we have to
+        -:   36:// leave some internal implementation details in this header file.
+        -:   37:// They are clearly marked by comments like this:
+        -:   38://
+        -:   39://   // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
+        -:   40://
+        -:   41:// Such code is NOT meant to be used by a user directly, and is subject
+        -:   42:// to CHANGE WITHOUT NOTICE.  Therefore DO NOT DEPEND ON IT in a user
+        -:   43:// program!
+        -:   44:
+        -:   45:// GOOGLETEST_CM0001 DO NOT DELETE
+        -:   46:
+        -:   47:#ifndef GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_
+        -:   48:#define GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_
+        -:   49:
+        -:   50:#include <limits>
+        -:   51:#include <memory>
+        -:   52:
+        -:   53:#include "gtest/internal/gtest-port.h"
+        -:   54:
+        -:   55:GTEST_DISABLE_MSC_WARNINGS_PUSH_(4251 \
+        -:   56:/* class A needs to have dll-interface to be used by clients of class B */)
+        -:   57:
+        -:   58:// Ensures that there is at least one operator<< in the global namespace.
+        -:   59:// See Message& operator<<(...) below for why.
+        -:   60:void operator<<(const testing::internal::Secret&, int);
+        -:   61:
+        -:   62:namespace testing {
+        -:   63:
+        -:   64:// The Message class works like an ostream repeater.
+        -:   65://
+        -:   66:// Typical usage:
+        -:   67://
+        -:   68://   1. You stream a bunch of values to a Message object.
+        -:   69://      It will remember the text in a stringstream.
+        -:   70://   2. Then you stream the Message object to an ostream.
+        -:   71://      This causes the text in the Message to be streamed
+        -:   72://      to the ostream.
+        -:   73://
+        -:   74:// For example;
+        -:   75://
+        -:   76://   testing::Message foo;
+        -:   77://   foo << 1 << " != " << 2;
+        -:   78://   std::cout << foo;
+        -:   79://
+        -:   80:// will print "1 != 2".
+        -:   81://
+        -:   82:// Message is not intended to be inherited from.  In particular, its
+        -:   83:// destructor is not virtual.
+        -:   84://
+        -:   85:// Note that stringstream behaves differently in gcc and in MSVC.  You
+        -:   86:// can stream a NULL char pointer to it in the former, but not in the
+        -:   87:// latter (it causes an access violation if you do).  The Message
+        -:   88:// class hides this difference by treating a NULL char pointer as
+        -:   89:// "(null)".
+        -:   90:class GTEST_API_ Message {
+        -:   91: private:
+        -:   92:  // The type of basic IO manipulators (endl, ends, and flush) for
+        -:   93:  // narrow streams.
+        -:   94:  typedef std::ostream& (*BasicNarrowIoManip)(std::ostream&);
+        -:   95:
+        -:   96: public:
+        -:   97:  // Constructs an empty Message.
+        -:   98:  Message();
+        -:   99:
+        -:  100:  // Copy constructor.
+        -:  101:  Message(const Message& msg) : ss_(new ::std::stringstream) {  // NOLINT
+        -:  102:    *ss_ << msg.GetString();
+        -:  103:  }
+        -:  104:
+        -:  105:  // Constructs a Message from a C-string.
+        -:  106:  explicit Message(const char* str) : ss_(new ::std::stringstream) {
+        -:  107:    *ss_ << str;
+        -:  108:  }
+        -:  109:
+        -:  110:  // Streams a non-pointer value to this object.
+        -:  111:  template <typename T>
+    #####:  112:  inline Message& operator <<(const T& val) {
+        -:  113:    // Some libraries overload << for STL containers.  These
+        -:  114:    // overloads are defined in the global namespace instead of ::std.
+        -:  115:    //
+        -:  116:    // C++'s symbol lookup rule (i.e. Koenig lookup) says that these
+        -:  117:    // overloads are visible in either the std namespace or the global
+        -:  118:    // namespace, but not other namespaces, including the testing
+        -:  119:    // namespace which Google Test's Message class is in.
+        -:  120:    //
+        -:  121:    // To allow STL containers (and other types that has a << operator
+        -:  122:    // defined in the global namespace) to be used in Google Test
+        -:  123:    // assertions, testing::Message must access the custom << operator
+        -:  124:    // from the global namespace.  With this using declaration,
+        -:  125:    // overloads of << defined in the global namespace and those
+        -:  126:    // visible via Koenig lookup are both exposed in this function.
+        -:  127:    using ::operator <<;
+    #####:  128:    *ss_ << val;
+    #####:  129:    return *this;
+        -:  130:  }
+------------------
+_ZN7testing7MessagelsIA5_cEERS0_RKT_:
+function _ZN7testing7MessagelsIA5_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  112:  inline Message& operator <<(const T& val) {
+        -:  113:    // Some libraries overload << for STL containers.  These
+        -:  114:    // overloads are defined in the global namespace instead of ::std.
+        -:  115:    //
+        -:  116:    // C++'s symbol lookup rule (i.e. Koenig lookup) says that these
+        -:  117:    // overloads are visible in either the std namespace or the global
+        -:  118:    // namespace, but not other namespaces, including the testing
+        -:  119:    // namespace which Google Test's Message class is in.
+        -:  120:    //
+        -:  121:    // To allow STL containers (and other types that has a << operator
+        -:  122:    // defined in the global namespace) to be used in Google Test
+        -:  123:    // assertions, testing::Message must access the custom << operator
+        -:  124:    // from the global namespace.  With this using declaration,
+        -:  125:    // overloads of << defined in the global namespace and those
+        -:  126:    // visible via Koenig lookup are both exposed in this function.
+        -:  127:    using ::operator <<;
+    #####:  128:    *ss_ << val;
+    %%%%%:  128-block  0
+call    0 never executed
+call    1 never executed
+    #####:  129:    return *this;
+        -:  130:  }
+------------------
+_ZN7testing7MessagelsINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS0_RKT_:
+function _ZN7testing7MessagelsINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  112:  inline Message& operator <<(const T& val) {
+        -:  113:    // Some libraries overload << for STL containers.  These
+        -:  114:    // overloads are defined in the global namespace instead of ::std.
+        -:  115:    //
+        -:  116:    // C++'s symbol lookup rule (i.e. Koenig lookup) says that these
+        -:  117:    // overloads are visible in either the std namespace or the global
+        -:  118:    // namespace, but not other namespaces, including the testing
+        -:  119:    // namespace which Google Test's Message class is in.
+        -:  120:    //
+        -:  121:    // To allow STL containers (and other types that has a << operator
+        -:  122:    // defined in the global namespace) to be used in Google Test
+        -:  123:    // assertions, testing::Message must access the custom << operator
+        -:  124:    // from the global namespace.  With this using declaration,
+        -:  125:    // overloads of << defined in the global namespace and those
+        -:  126:    // visible via Koenig lookup are both exposed in this function.
+        -:  127:    using ::operator <<;
+    #####:  128:    *ss_ << val;
+    %%%%%:  128-block  0
+call    0 never executed
+call    1 never executed
+    #####:  129:    return *this;
+        -:  130:  }
+------------------
+_ZN7testing7MessagelsIA3_cEERS0_RKT_:
+function _ZN7testing7MessagelsIA3_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  112:  inline Message& operator <<(const T& val) {
+        -:  113:    // Some libraries overload << for STL containers.  These
+        -:  114:    // overloads are defined in the global namespace instead of ::std.
+        -:  115:    //
+        -:  116:    // C++'s symbol lookup rule (i.e. Koenig lookup) says that these
+        -:  117:    // overloads are visible in either the std namespace or the global
+        -:  118:    // namespace, but not other namespaces, including the testing
+        -:  119:    // namespace which Google Test's Message class is in.
+        -:  120:    //
+        -:  121:    // To allow STL containers (and other types that has a << operator
+        -:  122:    // defined in the global namespace) to be used in Google Test
+        -:  123:    // assertions, testing::Message must access the custom << operator
+        -:  124:    // from the global namespace.  With this using declaration,
+        -:  125:    // overloads of << defined in the global namespace and those
+        -:  126:    // visible via Koenig lookup are both exposed in this function.
+        -:  127:    using ::operator <<;
+    #####:  128:    *ss_ << val;
+    %%%%%:  128-block  0
+call    0 never executed
+call    1 never executed
+    #####:  129:    return *this;
+        -:  130:  }
+------------------
+_ZN7testing7MessagelsIA12_cEERS0_RKT_:
+function _ZN7testing7MessagelsIA12_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  112:  inline Message& operator <<(const T& val) {
+        -:  113:    // Some libraries overload << for STL containers.  These
+        -:  114:    // overloads are defined in the global namespace instead of ::std.
+        -:  115:    //
+        -:  116:    // C++'s symbol lookup rule (i.e. Koenig lookup) says that these
+        -:  117:    // overloads are visible in either the std namespace or the global
+        -:  118:    // namespace, but not other namespaces, including the testing
+        -:  119:    // namespace which Google Test's Message class is in.
+        -:  120:    //
+        -:  121:    // To allow STL containers (and other types that has a << operator
+        -:  122:    // defined in the global namespace) to be used in Google Test
+        -:  123:    // assertions, testing::Message must access the custom << operator
+        -:  124:    // from the global namespace.  With this using declaration,
+        -:  125:    // overloads of << defined in the global namespace and those
+        -:  126:    // visible via Koenig lookup are both exposed in this function.
+        -:  127:    using ::operator <<;
+    #####:  128:    *ss_ << val;
+    %%%%%:  128-block  0
+call    0 never executed
+call    1 never executed
+    #####:  129:    return *this;
+        -:  130:  }
+------------------
+        -:  131:
+        -:  132:  // Streams a pointer value to this object.
+        -:  133:  //
+        -:  134:  // This function is an overload of the previous one.  When you
+        -:  135:  // stream a pointer to a Message, this definition will be used as it
+        -:  136:  // is more specialized.  (The C++ Standard, section
+        -:  137:  // [temp.func.order].)  If you stream a non-pointer, then the
+        -:  138:  // previous definition will be used.
+        -:  139:  //
+        -:  140:  // The reason for this overload is that streaming a NULL pointer to
+        -:  141:  // ostream is undefined behavior.  Depending on the compiler, you
+        -:  142:  // may get "0", "(nil)", "(null)", or an access violation.  To
+        -:  143:  // ensure consistent result across compilers, we always treat NULL
+        -:  144:  // as "(null)".
+        -:  145:  template <typename T>
+function _ZN7testing7MessagelsIKcEERS0_RKPT_ called 0 returned 0% blocks executed 0%
+    #####:  146:  inline Message& operator <<(T* const& pointer) {  // NOLINT
+    #####:  147:    if (pointer == nullptr) {
+    %%%%%:  147-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  148:      *ss_ << "(null)";
+    %%%%%:  148-block  0
+call    0 never executed
+call    1 never executed
+        -:  149:    } else {
+    #####:  150:      *ss_ << pointer;
+    %%%%%:  150-block  0
+call    0 never executed
+call    1 never executed
+        -:  151:    }
+    #####:  152:    return *this;
+    %%%%%:  152-block  0
+        -:  153:  }
+        -:  154:
+        -:  155:  // Since the basic IO manipulators are overloaded for both narrow
+        -:  156:  // and wide streams, we have to provide this specialized definition
+        -:  157:  // of operator <<, even though its body is the same as the
+        -:  158:  // templatized version above.  Without this definition, streaming
+        -:  159:  // endl or other basic IO manipulators to Message will confuse the
+        -:  160:  // compiler.
+        -:  161:  Message& operator <<(BasicNarrowIoManip val) {
+        -:  162:    *ss_ << val;
+        -:  163:    return *this;
+        -:  164:  }
+        -:  165:
+        -:  166:  // Instead of 1/0, we want to see true/false for bool values.
+        -:  167:  Message& operator <<(bool b) {
+        -:  168:    return *this << (b ? "true" : "false");
+        -:  169:  }
+        -:  170:
+        -:  171:  // These two overloads allow streaming a wide C string to a Message
+        -:  172:  // using the UTF-8 encoding.
+        -:  173:  Message& operator <<(const wchar_t* wide_c_str);
+        -:  174:  Message& operator <<(wchar_t* wide_c_str);
+        -:  175:
+        -:  176:#if GTEST_HAS_STD_WSTRING
+        -:  177:  // Converts the given wide string to a narrow string using the UTF-8
+        -:  178:  // encoding, and streams the result to this Message object.
+        -:  179:  Message& operator <<(const ::std::wstring& wstr);
+        -:  180:#endif  // GTEST_HAS_STD_WSTRING
+        -:  181:
+        -:  182:  // Gets the text streamed to this object so far as an std::string.
+        -:  183:  // Each '\0' character in the buffer is replaced with "\\0".
+        -:  184:  //
+        -:  185:  // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
+        -:  186:  std::string GetString() const;
+        -:  187:
+        -:  188: private:
+        -:  189:  // We'll hold the text streamed to this object here.
+        -:  190:  const std::unique_ptr< ::std::stringstream> ss_;
+        -:  191:
+        -:  192:  // We declare (but don't implement) this to prevent the compiler
+        -:  193:  // from implementing the assignment operator.
+        -:  194:  void operator=(const Message&);
+        -:  195:};
+        -:  196:
+        -:  197:// Streams a Message to an ostream.
+        -:  198:inline std::ostream& operator <<(std::ostream& os, const Message& sb) {
+        -:  199:  return os << sb.GetString();
+        -:  200:}
+        -:  201:
+        -:  202:namespace internal {
+        -:  203:
+        -:  204:// Converts a streamable value to an std::string.  A NULL pointer is
+        -:  205:// converted to "(null)".  When the input value is a ::string,
+        -:  206:// ::std::string, ::wstring, or ::std::wstring object, each NUL
+        -:  207:// character in it is replaced with "\\0".
+        -:  208:template <typename T>
+        -:  209:std::string StreamableToString(const T& streamable) {
+        -:  210:  return (Message() << streamable).GetString();
+        -:  211:}
+        -:  212:
+        -:  213:}  // namespace internal
+        -:  214:}  // namespace testing
+        -:  215:
+        -:  216:GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251
+        -:  217:
+        -:  218:#endif  // GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_

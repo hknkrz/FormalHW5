@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hkn_krz/formalHW5/Source.hpp
+iostream
+-
+iterator
+-
+map
+-
+queue
+-
+set
+-
+stack
+-
+vector
+-
+
+/home/hkn_krz/formalHW5/Tests.cpp
+Source.hpp
+/home/hkn_krz/formalHW5/Source.hpp
+gtest/gtest.h
+-
+vector
+-
+

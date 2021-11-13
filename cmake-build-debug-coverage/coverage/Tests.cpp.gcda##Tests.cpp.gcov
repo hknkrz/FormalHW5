@@ -1,0 +1,2019 @@
+        -:    0:Source:/home/hkn_krz/formalHW5/Tests.cpp
+        -:    0:Graph:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcno
+        -:    0:Data:/home/hkn_krz/formalHW5/cmake-build-debug-coverage/CMakeFiles/formal.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Source.hpp"
+        -:    2:#include <gtest/gtest.h>
+        -:    3:#include <random>
+        -:    4:#include <string>
+        -:    5:#include <vector>
+        -:    6:
+        2:    7:TEST(Build, Default) {
+       3*:    8:  ASSERT_THROW(Authomat::Build("*"),std::invalid_argument);
+       3*:    9:  ASSERT_THROW(Authomat::Build("+"),std::invalid_argument);
+       3*:   10:  ASSERT_THROW(Authomat::Build("."),std::invalid_argument);
+       3*:   11:  ASSERT_THROW(Authomat::Build("a."),std::invalid_argument);
+       3*:   12:  ASSERT_THROW(Authomat::Build("b+"),std::invalid_argument);
+       3*:   13:  ASSERT_THROW(Authomat::Build("q"),std::invalid_argument);
+       3*:   14:  ASSERT_THROW(Authomat::Build("aa"),std::invalid_argument);
+       3*:   15:  ASSERT_THROW(Authomat::Build("aa.ba*...."),std::invalid_argument);
+        -:   16:
+        -:   17:}
+------------------
+_ZN18Build_Default_Test8TestBodyEv:
+function _ZN18Build_Default_Test8TestBodyEv called 1 returned 100% blocks executed 49%
+        1:    7:TEST(Build, Default) {
+       3*:    8:  ASSERT_THROW(Authomat::Build("*"),std::invalid_argument);
+        1:    8-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:    8-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    8-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:    8-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:    8-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:    8-block  5
+call   16 never executed
+call   17 never executed
+        1:    8-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:    8-block  7
+    %%%%%:    8-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:    8-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:    8-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:    8-block 11
+call   29 never executed
+call   30 never executed
+        1:    8-block 12
+call   31 returned 1
+        1:    8-block 13
+        1:    8-block 14
+call   32 returned 1
+        1:    8-block 15
+        1:    8-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:    8-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:    8-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:    8-block 19
+call   41 never executed
+    $$$$$:    8-block 20
+    $$$$$:    8-block 21
+call   42 never executed
+    $$$$$:    8-block 22
+       3*:    9:  ASSERT_THROW(Authomat::Build("+"),std::invalid_argument);
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:    9-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    9-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:    9-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:    9-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:    9-block  5
+call   16 never executed
+call   17 never executed
+        1:    9-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:    9-block  7
+    %%%%%:    9-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:    9-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:    9-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:    9-block 11
+call   29 never executed
+call   30 never executed
+        1:    9-block 12
+call   31 returned 1
+        1:    9-block 13
+        1:    9-block 14
+call   32 returned 1
+        1:    9-block 15
+        1:    9-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:    9-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:    9-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:    9-block 19
+call   41 never executed
+    $$$$$:    9-block 20
+    $$$$$:    9-block 21
+call   42 never executed
+    $$$$$:    9-block 22
+       3*:   10:  ASSERT_THROW(Authomat::Build("."),std::invalid_argument);
+        1:   10-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   10-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   10-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   10-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   10-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   10-block  5
+call   16 never executed
+call   17 never executed
+        1:   10-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   10-block  7
+    %%%%%:   10-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   10-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   10-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   10-block 11
+call   29 never executed
+call   30 never executed
+        1:   10-block 12
+call   31 returned 1
+        1:   10-block 13
+        1:   10-block 14
+call   32 returned 1
+        1:   10-block 15
+        1:   10-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   10-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   10-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   10-block 19
+call   41 never executed
+    $$$$$:   10-block 20
+    $$$$$:   10-block 21
+call   42 never executed
+    $$$$$:   10-block 22
+       3*:   11:  ASSERT_THROW(Authomat::Build("a."),std::invalid_argument);
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   11-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   11-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   11-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   11-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   11-block  5
+call   16 never executed
+call   17 never executed
+        1:   11-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   11-block  7
+    %%%%%:   11-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   11-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   11-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   11-block 11
+call   29 never executed
+call   30 never executed
+        1:   11-block 12
+call   31 returned 1
+        1:   11-block 13
+        1:   11-block 14
+call   32 returned 1
+        1:   11-block 15
+        1:   11-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   11-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   11-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   11-block 19
+call   41 never executed
+    $$$$$:   11-block 20
+    $$$$$:   11-block 21
+call   42 never executed
+    $$$$$:   11-block 22
+       3*:   12:  ASSERT_THROW(Authomat::Build("b+"),std::invalid_argument);
+        1:   12-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   12-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   12-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   12-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   12-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   12-block  5
+call   16 never executed
+call   17 never executed
+        1:   12-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   12-block  7
+    %%%%%:   12-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   12-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   12-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   12-block 11
+call   29 never executed
+call   30 never executed
+        1:   12-block 12
+call   31 returned 1
+        1:   12-block 13
+        1:   12-block 14
+call   32 returned 1
+        1:   12-block 15
+        1:   12-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   12-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   12-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   12-block 19
+call   41 never executed
+    $$$$$:   12-block 20
+    $$$$$:   12-block 21
+call   42 never executed
+    $$$$$:   12-block 22
+       3*:   13:  ASSERT_THROW(Authomat::Build("q"),std::invalid_argument);
+        1:   13-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   13-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   13-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   13-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   13-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   13-block  5
+call   16 never executed
+call   17 never executed
+        1:   13-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   13-block  7
+    %%%%%:   13-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   13-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   13-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   13-block 11
+call   29 never executed
+call   30 never executed
+        1:   13-block 12
+call   31 returned 1
+        1:   13-block 13
+        1:   13-block 14
+call   32 returned 1
+        1:   13-block 15
+        1:   13-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   13-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   13-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   13-block 19
+call   41 never executed
+    $$$$$:   13-block 20
+    $$$$$:   13-block 21
+call   42 never executed
+    $$$$$:   13-block 22
+       3*:   14:  ASSERT_THROW(Authomat::Build("aa"),std::invalid_argument);
+        1:   14-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   14-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   14-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   14-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   14-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   14-block  5
+call   16 never executed
+call   17 never executed
+        1:   14-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   14-block  7
+    %%%%%:   14-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   14-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   14-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   14-block 11
+call   29 never executed
+call   30 never executed
+        1:   14-block 12
+call   31 returned 1
+        1:   14-block 13
+        1:   14-block 14
+call   32 returned 1
+        1:   14-block 15
+        1:   14-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   14-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   14-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   14-block 19
+call   41 never executed
+    $$$$$:   14-block 20
+    $$$$$:   14-block 21
+call   42 never executed
+    $$$$$:   14-block 22
+       3*:   15:  ASSERT_THROW(Authomat::Build("aa.ba*...."),std::invalid_argument);
+        1:   15-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   15-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   15-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   15-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   15-block  4
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1 (throw)
+    %%%%%:   15-block  5
+call   16 never executed
+call   17 never executed
+        1:   15-block  6
+branch 18 taken 0 (fallthrough)
+branch 19 taken 1
+    %%%%%:   15-block  7
+    %%%%%:   15-block  8
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+    %%%%%:   15-block  9
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    %%%%%:   15-block 10
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+    %%%%%:   15-block 11
+call   29 never executed
+call   30 never executed
+        1:   15-block 12
+call   31 returned 1
+        1:   15-block 13
+        1:   15-block 14
+call   32 returned 1
+        1:   15-block 15
+        1:   15-block 16
+branch 33 taken 1
+branch 34 taken 0
+        1:   15-block 17
+call   35 returned 1
+call   36 returned 1
+    $$$$$:   15-block 18
+call   37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+    $$$$$:   15-block 19
+call   41 never executed
+    $$$$$:   15-block 20
+    $$$$$:   15-block 21
+call   42 never executed
+    $$$$$:   15-block 22
+        -:   16:
+        -:   17:}
+------------------
+_ZN18Build_Default_TestC2Ev:
+function _ZN18Build_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:    7:TEST(Build, Default) {
+        1:    7-block  0
+call    0 returned 1
+------------------
+        -:   18:
+        2:   19:TEST(DeleteEps, Default) {
+        1:   20:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:   21:  y->DelEps();
+       17:   22:  for (auto element : *y->GetConds()) {
+       16:   23:    auto itr1 = y->GetDelta()->lower_bound(element);
+       16:   24:    auto itr2 = y->GetDelta()->upper_bound(element);
+       33:   25:    while(itr1!=itr2){
+      17*:   26:      ASSERT_NE(itr1->second.first,'1');
+       17:   27:      ++itr1;
+        -:   28:    }
+        -:   29:  }
+        -:   30:}
+------------------
+_ZN22DeleteEps_Default_Test8TestBodyEv:
+function _ZN22DeleteEps_Default_Test8TestBodyEv called 1 returned 100% blocks executed 54%
+        1:   19:TEST(DeleteEps, Default) {
+        1:   20:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   20-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   20-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   20-block  3
+call    9 never executed
+    $$$$$:   20-block  4
+    $$$$$:   20-block  5
+call   10 never executed
+    $$$$$:   20-block  6
+call   11 never executed
+        1:   21:  y->DelEps();
+call    0 returned 1
+       17:   22:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       17:   22-block  0
+call    3 returned 17
+branch  4 taken 16 (fallthrough)
+branch  5 taken 1
+       16:   22-block  1
+call    6 returned 16
+       16:   22-block  2
+call    7 returned 16
+       16:   23:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 16
+call    1 returned 16
+branch  2 taken 16 (fallthrough)
+branch  3 taken 0 (throw)
+       16:   24:    auto itr2 = y->GetDelta()->upper_bound(element);
+       16:   24-block  0
+call    0 returned 16
+call    1 returned 16
+branch  2 taken 16 (fallthrough)
+branch  3 taken 0 (throw)
+       33:   25:    while(itr1!=itr2){
+       33:   25-block  0
+call    0 returned 33
+branch  1 taken 17 (fallthrough)
+branch  2 taken 16
+      17*:   26:      ASSERT_NE(itr1->second.first,'1');
+       17:   26-block  0
+call    0 returned 17
+call    1 returned 17
+branch  2 taken 17 (fallthrough)
+branch  3 taken 0 (throw)
+       17:   26-block  1
+call    4 returned 17
+branch  5 taken 0 (fallthrough)
+branch  6 taken 17
+    %%%%%:   26-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   26-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   26-block  4
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   26-block  5
+call   17 never executed
+call   18 never executed
+    $$$$$:   26-block  6
+    $$$$$:   26-block  7
+call   19 never executed
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+call   20 never executed
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+call   21 never executed
+       17:   27:      ++itr1;
+       17:   27-block  0
+call    0 returned 17
+        -:   28:    }
+        -:   29:  }
+        -:   30:}
+------------------
+_ZN22DeleteEps_Default_TestC2Ev:
+function _ZN22DeleteEps_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   19:TEST(DeleteEps, Default) {
+        1:   19-block  0
+call    0 returned 1
+------------------
+        -:   31:
+        2:   32:TEST(DeleteEps, LongReg) {
+        1:   33:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:   34:  y->DelEps();
+       24:   35:  for (auto element : *y->GetConds()) {
+       23:   36:    auto itr1 = y->GetDelta()->lower_bound(element);
+       23:   37:    auto itr2 = y->GetDelta()->upper_bound(element);
+       53:   38:    while(itr1!=itr2){
+      30*:   39:      ASSERT_NE(itr1->second.first,'1');
+       30:   40:      ++itr1;
+        -:   41:    }
+        -:   42:  }
+        -:   43:}
+------------------
+_ZN22DeleteEps_LongReg_Test8TestBodyEv:
+function _ZN22DeleteEps_LongReg_Test8TestBodyEv called 1 returned 100% blocks executed 54%
+        1:   32:TEST(DeleteEps, LongReg) {
+        1:   33:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   33-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   33-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   33-block  3
+call    9 never executed
+    $$$$$:   33-block  4
+    $$$$$:   33-block  5
+call   10 never executed
+    $$$$$:   33-block  6
+call   11 never executed
+        1:   34:  y->DelEps();
+call    0 returned 1
+       24:   35:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       24:   35-block  0
+call    3 returned 24
+branch  4 taken 23 (fallthrough)
+branch  5 taken 1
+       23:   35-block  1
+call    6 returned 23
+       23:   35-block  2
+call    7 returned 23
+       23:   36:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 23
+call    1 returned 23
+branch  2 taken 23 (fallthrough)
+branch  3 taken 0 (throw)
+       23:   37:    auto itr2 = y->GetDelta()->upper_bound(element);
+       23:   37-block  0
+call    0 returned 23
+call    1 returned 23
+branch  2 taken 23 (fallthrough)
+branch  3 taken 0 (throw)
+       53:   38:    while(itr1!=itr2){
+       53:   38-block  0
+call    0 returned 53
+branch  1 taken 30 (fallthrough)
+branch  2 taken 23
+      30*:   39:      ASSERT_NE(itr1->second.first,'1');
+       30:   39-block  0
+call    0 returned 30
+call    1 returned 30
+branch  2 taken 30 (fallthrough)
+branch  3 taken 0 (throw)
+       30:   39-block  1
+call    4 returned 30
+branch  5 taken 0 (fallthrough)
+branch  6 taken 30
+    %%%%%:   39-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   39-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   39-block  4
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   39-block  5
+call   17 never executed
+call   18 never executed
+    $$$$$:   39-block  6
+    $$$$$:   39-block  7
+call   19 never executed
+    $$$$$:   39-block  8
+    $$$$$:   39-block  9
+call   20 never executed
+    $$$$$:   39-block 10
+    $$$$$:   39-block 11
+call   21 never executed
+       30:   40:      ++itr1;
+       30:   40-block  0
+call    0 returned 30
+        -:   41:    }
+        -:   42:  }
+        -:   43:}
+------------------
+_ZN22DeleteEps_LongReg_TestC2Ev:
+function _ZN22DeleteEps_LongReg_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   32:TEST(DeleteEps, LongReg) {
+        1:   32-block  0
+call    0 returned 1
+------------------
+        -:   44:
+        2:   45:TEST(FullAuth,Default){
+        1:   46:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:   47:  y->DelEps();
+        1:   48:  y = y->Determine();
+        1:   49:  y->FullAuth();
+       10:   50:  for (auto element : *y->GetConds()) {
+        9:   51:    auto itr1 = y->GetDelta()->lower_bound(element);
+        9:   52:    auto itr2 = y->GetDelta()->upper_bound(element);
+        9:   53:    std::map<char,bool> is_visited ;
+        9:   54:    is_visited.insert({'a',false});
+        9:   55:    is_visited.insert({'b',false});
+        9:   56:    is_visited.insert({'c',false});
+       39:   57:    while(itr1!=itr2){
+       30:   58:      is_visited[itr1->second.first] = true;
+       30:   59:      ++itr1;
+        -:   60:    }
+       9*:   61:    ASSERT_TRUE(is_visited['a']);
+       9*:   62:    ASSERT_TRUE(is_visited['b']);
+       9*:   63:    ASSERT_TRUE(is_visited['c']);
+        -:   64:  }
+        -:   65:}
+------------------
+_ZN21FullAuth_Default_Test8TestBodyEv:
+function _ZN21FullAuth_Default_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+        1:   45:TEST(FullAuth,Default){
+        1:   46:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:   46-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   46-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   46-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   46-block  3
+call    9 never executed
+    $$$$$:   46-block  4
+    $$$$$:   46-block  5
+call   10 never executed
+    $$$$$:   46-block  6
+call   11 never executed
+        1:   47:  y->DelEps();
+call    0 returned 1
+        1:   48:  y = y->Determine();
+call    0 returned 1
+        1:   49:  y->FullAuth();
+call    0 returned 1
+       10:   50:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       10:   50-block  0
+call    3 returned 10
+branch  4 taken 9 (fallthrough)
+branch  5 taken 1
+        9:   50-block  1
+call    6 returned 9
+        9:   50-block  2
+call    7 returned 9
+        9:   51:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:   52:    auto itr2 = y->GetDelta()->upper_bound(element);
+        9:   52-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:   53:    std::map<char,bool> is_visited ;
+        9:   53-block  0
+call    0 returned 9
+    $$$$$:   53-block  1
+call    1 never executed
+        9:   54:    is_visited.insert({'a',false});
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   54-block  0
+    $$$$$:   54-block  1
+    $$$$$:   54-block  2
+        9:   55:    is_visited.insert({'b',false});
+        9:   55-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   55-block  1
+    $$$$$:   55-block  2
+    $$$$$:   55-block  3
+        9:   56:    is_visited.insert({'c',false});
+        9:   56-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:   56-block  1
+    $$$$$:   56-block  2
+    $$$$$:   56-block  3
+    $$$$$:   56-block  4
+       39:   57:    while(itr1!=itr2){
+       39:   57-block  0
+call    0 returned 39
+branch  1 taken 30 (fallthrough)
+branch  2 taken 9
+       30:   58:      is_visited[itr1->second.first] = true;
+       30:   58-block  0
+call    0 returned 30
+call    1 returned 30
+branch  2 taken 30 (fallthrough)
+branch  3 taken 0 (throw)
+       30:   59:      ++itr1;
+       30:   59-block  0
+call    0 returned 30
+        -:   60:    }
+       9*:   61:    ASSERT_TRUE(is_visited['a']);
+        9:   61-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   61-block  1
+call    3 returned 9
+call    4 returned 9
+branch  5 taken 0 (fallthrough)
+branch  6 taken 9
+    %%%%%:   61-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   61-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   61-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   61-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   61-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   61-block  7
+    $$$$$:   61-block  8
+call   23 never executed
+    $$$$$:   61-block  9
+    $$$$$:   61-block 10
+call   24 never executed
+    $$$$$:   61-block 11
+    $$$$$:   61-block 12
+call   25 never executed
+    $$$$$:   61-block 13
+    $$$$$:   61-block 14
+call   26 never executed
+       9*:   62:    ASSERT_TRUE(is_visited['b']);
+        9:   62-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   62-block  1
+call    3 returned 9
+call    4 returned 9
+branch  5 taken 0 (fallthrough)
+branch  6 taken 9
+    %%%%%:   62-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   62-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   62-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   62-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   62-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   62-block  7
+    $$$$$:   62-block  8
+call   23 never executed
+    $$$$$:   62-block  9
+    $$$$$:   62-block 10
+call   24 never executed
+    $$$$$:   62-block 11
+    $$$$$:   62-block 12
+call   25 never executed
+    $$$$$:   62-block 13
+    $$$$$:   62-block 14
+call   26 never executed
+       9*:   63:    ASSERT_TRUE(is_visited['c']);
+        9:   63-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   63-block  1
+call    3 returned 9
+call    4 returned 9
+branch  5 taken 0 (fallthrough)
+branch  6 taken 9
+    %%%%%:   63-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   63-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   63-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   63-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   63-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   63-block  7
+    $$$$$:   63-block  8
+call   23 never executed
+    $$$$$:   63-block  9
+    $$$$$:   63-block 10
+call   24 never executed
+    $$$$$:   63-block 11
+    $$$$$:   63-block 12
+call   25 never executed
+    $$$$$:   63-block 13
+    $$$$$:   63-block 14
+call   26 never executed
+        -:   64:  }
+        -:   65:}
+------------------
+_ZN21FullAuth_Default_TestC2Ev:
+function _ZN21FullAuth_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   45:TEST(FullAuth,Default){
+        1:   45-block  0
+call    0 returned 1
+------------------
+        -:   66:
+        2:   67:TEST(FullAuth,LongReg){
+        1:   68:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:   69:  y->DelEps();
+        1:   70:  y = y->Determine();
+        1:   71:  y->FullAuth();
+       12:   72:  for (auto element : *y->GetConds()) {
+       11:   73:    auto itr1 = y->GetDelta()->lower_bound(element);
+       11:   74:    auto itr2 = y->GetDelta()->upper_bound(element);
+       11:   75:    std::map<char,bool> is_visited ;
+       11:   76:    is_visited.insert({'a',false});
+       11:   77:    is_visited.insert({'b',false});
+       11:   78:    is_visited.insert({'c',false});
+       50:   79:    while(itr1!=itr2){
+       39:   80:      is_visited[itr1->second.first] = true;
+       39:   81:      ++itr1;
+        -:   82:    }
+      11*:   83:    ASSERT_TRUE(is_visited['a']);
+      11*:   84:    ASSERT_TRUE(is_visited['b']);
+      11*:   85:    ASSERT_TRUE(is_visited['c']);
+        -:   86:  }
+        -:   87:}
+------------------
+_ZN21FullAuth_LongReg_Test8TestBodyEv:
+function _ZN21FullAuth_LongReg_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+        1:   67:TEST(FullAuth,LongReg){
+        1:   68:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:   68-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   68-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   68-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   68-block  3
+call    9 never executed
+    $$$$$:   68-block  4
+    $$$$$:   68-block  5
+call   10 never executed
+    $$$$$:   68-block  6
+call   11 never executed
+        1:   69:  y->DelEps();
+call    0 returned 1
+        1:   70:  y = y->Determine();
+call    0 returned 1
+        1:   71:  y->FullAuth();
+call    0 returned 1
+       12:   72:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   72-block  0
+call    3 returned 12
+branch  4 taken 11 (fallthrough)
+branch  5 taken 1
+       11:   72-block  1
+call    6 returned 11
+       11:   72-block  2
+call    7 returned 11
+       11:   73:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:   74:    auto itr2 = y->GetDelta()->upper_bound(element);
+       11:   74-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:   75:    std::map<char,bool> is_visited ;
+       11:   75-block  0
+call    0 returned 11
+    $$$$$:   75-block  1
+call    1 never executed
+       11:   76:    is_visited.insert({'a',false});
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   76-block  0
+    $$$$$:   76-block  1
+    $$$$$:   76-block  2
+       11:   77:    is_visited.insert({'b',false});
+       11:   77-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   77-block  1
+    $$$$$:   77-block  2
+    $$$$$:   77-block  3
+       11:   78:    is_visited.insert({'c',false});
+       11:   78-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:   78-block  1
+    $$$$$:   78-block  2
+    $$$$$:   78-block  3
+    $$$$$:   78-block  4
+       50:   79:    while(itr1!=itr2){
+       50:   79-block  0
+call    0 returned 50
+branch  1 taken 39 (fallthrough)
+branch  2 taken 11
+       39:   80:      is_visited[itr1->second.first] = true;
+       39:   80-block  0
+call    0 returned 39
+call    1 returned 39
+branch  2 taken 39 (fallthrough)
+branch  3 taken 0 (throw)
+       39:   81:      ++itr1;
+       39:   81-block  0
+call    0 returned 39
+        -:   82:    }
+      11*:   83:    ASSERT_TRUE(is_visited['a']);
+       11:   83-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   83-block  1
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 0 (fallthrough)
+branch  6 taken 11
+    %%%%%:   83-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   83-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   83-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   83-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   83-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   83-block  7
+    $$$$$:   83-block  8
+call   23 never executed
+    $$$$$:   83-block  9
+    $$$$$:   83-block 10
+call   24 never executed
+    $$$$$:   83-block 11
+    $$$$$:   83-block 12
+call   25 never executed
+    $$$$$:   83-block 13
+    $$$$$:   83-block 14
+call   26 never executed
+      11*:   84:    ASSERT_TRUE(is_visited['b']);
+       11:   84-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   84-block  1
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 0 (fallthrough)
+branch  6 taken 11
+    %%%%%:   84-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   84-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   84-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   84-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   84-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   84-block  7
+    $$$$$:   84-block  8
+call   23 never executed
+    $$$$$:   84-block  9
+    $$$$$:   84-block 10
+call   24 never executed
+    $$$$$:   84-block 11
+    $$$$$:   84-block 12
+call   25 never executed
+    $$$$$:   84-block 13
+    $$$$$:   84-block 14
+call   26 never executed
+      11*:   85:    ASSERT_TRUE(is_visited['c']);
+       11:   85-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   85-block  1
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 0 (fallthrough)
+branch  6 taken 11
+    %%%%%:   85-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   85-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   85-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   85-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   85-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:   85-block  7
+    $$$$$:   85-block  8
+call   23 never executed
+    $$$$$:   85-block  9
+    $$$$$:   85-block 10
+call   24 never executed
+    $$$$$:   85-block 11
+    $$$$$:   85-block 12
+call   25 never executed
+    $$$$$:   85-block 13
+    $$$$$:   85-block 14
+call   26 never executed
+        -:   86:  }
+        -:   87:}
+------------------
+_ZN21FullAuth_LongReg_TestC2Ev:
+function _ZN21FullAuth_LongReg_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   67:TEST(FullAuth,LongReg){
+        1:   67-block  0
+call    0 returned 1
+------------------
+        -:   88:
+        2:   89:TEST(FullAuth,ShortReg){
+        1:   90:  Authomat *y = Authomat::Build("cbc.+*a.aa.cc.+.");
+        1:   91:  y->DelEps();
+        1:   92:  y = y->Determine();
+        1:   93:  y->FullAuth();
+       11:   94:  for (auto element : *y->GetConds()) {
+       10:   95:    auto itr1 = y->GetDelta()->lower_bound(element);
+       10:   96:    auto itr2 = y->GetDelta()->upper_bound(element);
+       10:   97:    std::map<char,bool> is_visited ;
+       10:   98:    is_visited.insert({'a',false});
+       10:   99:    is_visited.insert({'b',false});
+       10:  100:    is_visited.insert({'c',false});
+       41:  101:    while(itr1!=itr2){
+       31:  102:      is_visited[itr1->second.first] = true;
+       31:  103:      ++itr1;
+        -:  104:    }
+      10*:  105:    ASSERT_TRUE(is_visited['a']);
+      10*:  106:    ASSERT_TRUE(is_visited['b']);
+      10*:  107:    ASSERT_TRUE(is_visited['c']);
+        -:  108:  }
+        -:  109:}
+------------------
+_ZN22FullAuth_ShortReg_Test8TestBodyEv:
+function _ZN22FullAuth_ShortReg_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+        1:   89:TEST(FullAuth,ShortReg){
+        1:   90:  Authomat *y = Authomat::Build("cbc.+*a.aa.cc.+.");
+        1:   90-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   90-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   90-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   90-block  3
+call    9 never executed
+    $$$$$:   90-block  4
+    $$$$$:   90-block  5
+call   10 never executed
+    $$$$$:   90-block  6
+call   11 never executed
+        1:   91:  y->DelEps();
+call    0 returned 1
+        1:   92:  y = y->Determine();
+call    0 returned 1
+        1:   93:  y->FullAuth();
+call    0 returned 1
+       11:   94:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       11:   94-block  0
+call    3 returned 11
+branch  4 taken 10 (fallthrough)
+branch  5 taken 1
+       10:   94-block  1
+call    6 returned 10
+       10:   94-block  2
+call    7 returned 10
+       10:   95:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   96:    auto itr2 = y->GetDelta()->upper_bound(element);
+       10:   96-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   97:    std::map<char,bool> is_visited ;
+       10:   97-block  0
+call    0 returned 10
+    $$$$$:   97-block  1
+call    1 never executed
+       10:   98:    is_visited.insert({'a',false});
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   98-block  0
+    $$$$$:   98-block  1
+    $$$$$:   98-block  2
+       10:   99:    is_visited.insert({'b',false});
+       10:   99-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   99-block  1
+    $$$$$:   99-block  2
+    $$$$$:   99-block  3
+       10:  100:    is_visited.insert({'c',false});
+       10:  100-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:  100-block  1
+    $$$$$:  100-block  2
+    $$$$$:  100-block  3
+    $$$$$:  100-block  4
+       41:  101:    while(itr1!=itr2){
+       41:  101-block  0
+call    0 returned 41
+branch  1 taken 31 (fallthrough)
+branch  2 taken 10
+       31:  102:      is_visited[itr1->second.first] = true;
+       31:  102-block  0
+call    0 returned 31
+call    1 returned 31
+branch  2 taken 31 (fallthrough)
+branch  3 taken 0 (throw)
+       31:  103:      ++itr1;
+       31:  103-block  0
+call    0 returned 31
+        -:  104:    }
+      10*:  105:    ASSERT_TRUE(is_visited['a']);
+       10:  105-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  105-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 0 (fallthrough)
+branch  6 taken 10
+    %%%%%:  105-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  105-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  105-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  105-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  105-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  105-block  7
+    $$$$$:  105-block  8
+call   23 never executed
+    $$$$$:  105-block  9
+    $$$$$:  105-block 10
+call   24 never executed
+    $$$$$:  105-block 11
+    $$$$$:  105-block 12
+call   25 never executed
+    $$$$$:  105-block 13
+    $$$$$:  105-block 14
+call   26 never executed
+      10*:  106:    ASSERT_TRUE(is_visited['b']);
+       10:  106-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  106-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 0 (fallthrough)
+branch  6 taken 10
+    %%%%%:  106-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  106-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  106-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  106-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  106-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  106-block  7
+    $$$$$:  106-block  8
+call   23 never executed
+    $$$$$:  106-block  9
+    $$$$$:  106-block 10
+call   24 never executed
+    $$$$$:  106-block 11
+    $$$$$:  106-block 12
+call   25 never executed
+    $$$$$:  106-block 13
+    $$$$$:  106-block 14
+call   26 never executed
+      10*:  107:    ASSERT_TRUE(is_visited['c']);
+       10:  107-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  107-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 0 (fallthrough)
+branch  6 taken 10
+    %%%%%:  107-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  107-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  107-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  107-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  107-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+call   23 never executed
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+call   24 never executed
+    $$$$$:  107-block 11
+    $$$$$:  107-block 12
+call   25 never executed
+    $$$$$:  107-block 13
+    $$$$$:  107-block 14
+call   26 never executed
+        -:  108:  }
+        -:  109:}
+------------------
+_ZN22FullAuth_ShortReg_TestC2Ev:
+function _ZN22FullAuth_ShortReg_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   89:TEST(FullAuth,ShortReg){
+        1:   89-block  0
+call    0 returned 1
+------------------
+        -:  110:
+        2:  111:TEST(FullAuth,LongConcat){
+        1:  112:  Authomat *y = Authomat::Build("cabcbc.....bcbacba......+*bababa.....cabbba.....+*.");
+        1:  113:  y->DelEps();
+        1:  114:  y = y->Determine();
+        1:  115:  y->FullAuth();
+       28:  116:  for (auto element : *y->GetConds()) {
+       27:  117:    auto itr1 = y->GetDelta()->lower_bound(element);
+       27:  118:    auto itr2 = y->GetDelta()->upper_bound(element);
+       27:  119:    std::map<char,bool> is_visited ;
+       27:  120:    is_visited.insert({'a',false});
+       27:  121:    is_visited.insert({'b',false});
+       27:  122:    is_visited.insert({'c',false});
+      111:  123:    while(itr1!=itr2){
+       84:  124:      is_visited[itr1->second.first] = true;
+       84:  125:      ++itr1;
+        -:  126:    }
+      27*:  127:    ASSERT_TRUE(is_visited['a']);
+      27*:  128:    ASSERT_TRUE(is_visited['b']);
+      27*:  129:    ASSERT_TRUE(is_visited['c']);
+        -:  130:  }
+        -:  131:}
+------------------
+_ZN24FullAuth_LongConcat_Test8TestBodyEv:
+function _ZN24FullAuth_LongConcat_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+        1:  111:TEST(FullAuth,LongConcat){
+        1:  112:  Authomat *y = Authomat::Build("cabcbc.....bcbacba......+*bababa.....cabbba.....+*.");
+        1:  112-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  112-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  112-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  112-block  3
+call    9 never executed
+    $$$$$:  112-block  4
+    $$$$$:  112-block  5
+call   10 never executed
+    $$$$$:  112-block  6
+call   11 never executed
+        1:  113:  y->DelEps();
+call    0 returned 1
+        1:  114:  y = y->Determine();
+call    0 returned 1
+        1:  115:  y->FullAuth();
+call    0 returned 1
+       28:  116:  for (auto element : *y->GetConds()) {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       28:  116-block  0
+call    3 returned 28
+branch  4 taken 27 (fallthrough)
+branch  5 taken 1
+       27:  116-block  1
+call    6 returned 27
+       27:  116-block  2
+call    7 returned 27
+       27:  117:    auto itr1 = y->GetDelta()->lower_bound(element);
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+       27:  118:    auto itr2 = y->GetDelta()->upper_bound(element);
+       27:  118-block  0
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+       27:  119:    std::map<char,bool> is_visited ;
+       27:  119-block  0
+call    0 returned 27
+    $$$$$:  119-block  1
+call    1 never executed
+       27:  120:    is_visited.insert({'a',false});
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  120-block  0
+    $$$$$:  120-block  1
+    $$$$$:  120-block  2
+       27:  121:    is_visited.insert({'b',false});
+       27:  121-block  0
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  121-block  1
+    $$$$$:  121-block  2
+    $$$$$:  121-block  3
+       27:  122:    is_visited.insert({'c',false});
+       27:  122-block  0
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+       27:  122-block  1
+    $$$$$:  122-block  2
+    $$$$$:  122-block  3
+    $$$$$:  122-block  4
+      111:  123:    while(itr1!=itr2){
+      111:  123-block  0
+call    0 returned 111
+branch  1 taken 84 (fallthrough)
+branch  2 taken 27
+       84:  124:      is_visited[itr1->second.first] = true;
+       84:  124-block  0
+call    0 returned 84
+call    1 returned 84
+branch  2 taken 84 (fallthrough)
+branch  3 taken 0 (throw)
+       84:  125:      ++itr1;
+       84:  125-block  0
+call    0 returned 84
+        -:  126:    }
+      27*:  127:    ASSERT_TRUE(is_visited['a']);
+       27:  127-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  127-block  1
+call    3 returned 27
+call    4 returned 27
+branch  5 taken 0 (fallthrough)
+branch  6 taken 27
+    %%%%%:  127-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  127-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  127-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  127-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  127-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  127-block  7
+    $$$$$:  127-block  8
+call   23 never executed
+    $$$$$:  127-block  9
+    $$$$$:  127-block 10
+call   24 never executed
+    $$$$$:  127-block 11
+    $$$$$:  127-block 12
+call   25 never executed
+    $$$$$:  127-block 13
+    $$$$$:  127-block 14
+call   26 never executed
+      27*:  128:    ASSERT_TRUE(is_visited['b']);
+       27:  128-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  128-block  1
+call    3 returned 27
+call    4 returned 27
+branch  5 taken 0 (fallthrough)
+branch  6 taken 27
+    %%%%%:  128-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  128-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  128-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  128-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  128-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  128-block  7
+    $$$$$:  128-block  8
+call   23 never executed
+    $$$$$:  128-block  9
+    $$$$$:  128-block 10
+call   24 never executed
+    $$$$$:  128-block 11
+    $$$$$:  128-block 12
+call   25 never executed
+    $$$$$:  128-block 13
+    $$$$$:  128-block 14
+call   26 never executed
+      27*:  129:    ASSERT_TRUE(is_visited['c']);
+       27:  129-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  129-block  1
+call    3 returned 27
+call    4 returned 27
+branch  5 taken 0 (fallthrough)
+branch  6 taken 27
+    %%%%%:  129-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  129-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  129-block  4
+call   13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  129-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  129-block  6
+call   20 never executed
+call   21 never executed
+call   22 never executed
+    $$$$$:  129-block  7
+    $$$$$:  129-block  8
+call   23 never executed
+    $$$$$:  129-block  9
+    $$$$$:  129-block 10
+call   24 never executed
+    $$$$$:  129-block 11
+    $$$$$:  129-block 12
+call   25 never executed
+    $$$$$:  129-block 13
+    $$$$$:  129-block 14
+call   26 never executed
+        -:  130:  }
+        -:  131:}
+------------------
+_ZN24FullAuth_LongConcat_TestC2Ev:
+function _ZN24FullAuth_LongConcat_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  111:TEST(FullAuth,LongConcat){
+        1:  111-block  0
+call    0 returned 1
+------------------
+        -:  132:
+        2:  133:TEST(FindShortest, Default){
+        1:  134:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:  135:  y->DelEps();
+        1:  136:  y = y->Determine();
+        1:  137:  y->FullAuth();
+       1*:  138:  ASSERT_EQ(y->SearchPath('a', 3), 8);
+        -:  139:
+        -:  140:}
+------------------
+_ZN25FindShortest_Default_Test8TestBodyEv:
+function _ZN25FindShortest_Default_Test8TestBodyEv called 1 returned 100% blocks executed 41%
+        1:  133:TEST(FindShortest, Default){
+        1:  134:  Authomat *y = Authomat::Build("ab.bc.+acb..*.");
+        1:  134-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  134-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  134-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  134-block  3
+call    9 never executed
+    $$$$$:  134-block  4
+    $$$$$:  134-block  5
+call   10 never executed
+    $$$$$:  134-block  6
+call   11 never executed
+        1:  135:  y->DelEps();
+call    0 returned 1
+        1:  136:  y = y->Determine();
+call    0 returned 1
+        1:  137:  y->FullAuth();
+call    0 returned 1
+       1*:  138:  ASSERT_EQ(y->SearchPath('a', 3), 8);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  138-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  138-block  1
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  138-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  138-block  3
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  138-block  4
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  138-block  5
+call   19 never executed
+call   20 never executed
+    $$$$$:  138-block  6
+    $$$$$:  138-block  7
+    $$$$$:  138-block  8
+call   21 never executed
+    $$$$$:  138-block  9
+    $$$$$:  138-block 10
+call   22 never executed
+    $$$$$:  138-block 11
+    $$$$$:  138-block 12
+call   23 never executed
+        -:  139:
+        -:  140:}
+------------------
+_ZN25FindShortest_Default_TestC2Ev:
+function _ZN25FindShortest_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  133:TEST(FindShortest, Default){
+        1:  133-block  0
+call    0 returned 1
+------------------
+        2:  141:TEST(FindShortest, LongExp){
+        1:  142:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:  143:  y->DelEps();
+        1:  144:  y = y->Determine();
+        1:  145:  y->FullAuth();
+       1*:  146:  ASSERT_EQ(y->SearchPath('c', 13), 26);
+        -:  147:
+        -:  148:}
+------------------
+_ZN25FindShortest_LongExp_Test8TestBodyEv:
+function _ZN25FindShortest_LongExp_Test8TestBodyEv called 1 returned 100% blocks executed 41%
+        1:  141:TEST(FindShortest, LongExp){
+        1:  142:  Authomat *y = Authomat::Build("ac.bc.+acbc...aa.+*.");
+        1:  142-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  142-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  142-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  142-block  3
+call    9 never executed
+    $$$$$:  142-block  4
+    $$$$$:  142-block  5
+call   10 never executed
+    $$$$$:  142-block  6
+call   11 never executed
+        1:  143:  y->DelEps();
+call    0 returned 1
+        1:  144:  y = y->Determine();
+call    0 returned 1
+        1:  145:  y->FullAuth();
+call    0 returned 1
+       1*:  146:  ASSERT_EQ(y->SearchPath('c', 13), 26);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  146-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  146-block  1
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  146-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  146-block  3
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  146-block  4
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  146-block  5
+call   19 never executed
+call   20 never executed
+    $$$$$:  146-block  6
+    $$$$$:  146-block  7
+    $$$$$:  146-block  8
+call   21 never executed
+    $$$$$:  146-block  9
+    $$$$$:  146-block 10
+call   22 never executed
+    $$$$$:  146-block 11
+    $$$$$:  146-block 12
+call   23 never executed
+        -:  147:
+        -:  148:}
+------------------
+_ZN25FindShortest_LongExp_TestC2Ev:
+function _ZN25FindShortest_LongExp_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  141:TEST(FindShortest, LongExp){
+        1:  141-block  0
+call    0 returned 1
+------------------
+        2:  149:TEST(FindShortest, NoPath){
+        1:  150:  Authomat *y = Authomat::Build("ab+*c.");
+        1:  151:  y->DelEps();
+        1:  152:  y = y->Determine();
+        1:  153:  y->FullAuth();
+       1*:  154:  ASSERT_EQ(y->SearchPath('c', 2), -1);
+        -:  155:
+        -:  156:}
