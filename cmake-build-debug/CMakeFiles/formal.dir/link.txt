@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/formal.dir/Tests.cpp.o CMakeFiles/formal.dir/main.cpp.o -o formal  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

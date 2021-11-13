@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/StringTest.dir/Tests.cpp.o -o StringTest  /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 
