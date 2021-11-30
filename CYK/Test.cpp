@@ -45,20 +45,21 @@ TEST(CheckGram, UncorrectGram) {
   ASSERT_FALSE(gram.CheckGram());
 }
 
-
 TEST(CYK, Default) {
   auto gram = Gram();
-  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
-      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
-      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
-      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
-      std::make_pair("C", "("),  std::make_pair("E", ")"),
-      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
-      std::make_pair("A", "CE")
+  std::vector<std::pair<std::string, std::string>> data = {
+      // ПСП в НФ Хомского
+      std::make_pair("S", "AC"),
+      std::make_pair("C", "SD"),
+      std::make_pair("D", "BS"),
+      std::make_pair("Z", "AC"),
+      std::make_pair("A", "("),
+      std::make_pair("B", ")"),
+      std::make_pair("C", ")"),
+      std::make_pair("D", ")")
 
   };
-  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
-
+  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'Z'};
   char start = 'S';
   gram.Build(data, nonterm, start);
 
@@ -67,37 +68,64 @@ TEST(CYK, Default) {
 
 TEST(CYK, LongExpr) {
   auto gram = Gram();
-  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
-      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
-      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
-      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
-      std::make_pair("C", "("),  std::make_pair("E", ")"),
-      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
-      std::make_pair("A", "CE")
+  std::vector<std::pair<std::string, std::string>> data = {
+      // ПСП в НФ Хомского
+      std::make_pair("S", "AC"),
+      std::make_pair("C", "SD"),
+      std::make_pair("D", "BS"),
+      std::make_pair("Z", "AC"),
+      std::make_pair("A", "("),
+      std::make_pair("B", ")"),
+      std::make_pair("C", ")"),
+      std::make_pair("D", ")")
 
   };
-  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'Z'};
 
   char start = 'S';
   gram.Build(data, nonterm, start);
 
-  ASSERT_TRUE(gram.CYK("(()())(())()"));
+  ASSERT_TRUE(gram.CYK("(())()(()()(()))((()))((((((((()))))))))"));
 }
 
 TEST(CYK, IncorrectWord) {
   auto gram = Gram();
-  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
-      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
-      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
-      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
-      std::make_pair("C", "("),  std::make_pair("E", ")"),
-      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
-      std::make_pair("A", "CE")
+  std::vector<std::pair<std::string, std::string>> data = {
+      // ПСП в НФ Хомского
+      std::make_pair("S", "AC"),
+      std::make_pair("C", "SD"),
+      std::make_pair("D", "BS"),
+      std::make_pair("Z", "AC"),
+      std::make_pair("A", "("),
+      std::make_pair("B", ")"),
+      std::make_pair("C", ")"),
+      std::make_pair("D", ")")
 
   };
-  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'Z'};
 
   char start = 'S';
   gram.Build(data, nonterm, start);
   ASSERT_FALSE(gram.CYK("))(("));
+}
+
+TEST(CYK, longIncorrect) {
+  auto gram = Gram();
+  std::vector<std::pair<std::string, std::string>> data = {
+      // ПСП в НФ Хомского
+      std::make_pair("S", "AC"),
+      std::make_pair("C", "SD"),
+      std::make_pair("D", "BS"),
+      std::make_pair("Z", "AC"),
+      std::make_pair("A", "("),
+      std::make_pair("B", ")"),
+      std::make_pair("C", ")"),
+      std::make_pair("D", ")")
+
+  };
+  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'Z'};
+
+  char start = 'S';
+  gram.Build(data, nonterm, start);
+  ASSERT_FALSE(gram.CYK("(())()(()()((((()))"));
 }
