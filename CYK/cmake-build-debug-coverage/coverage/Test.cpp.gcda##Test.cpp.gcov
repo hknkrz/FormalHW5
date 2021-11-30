@@ -1,0 +1,907 @@
+        -:    0:Source:/home/hkn_krz/CYK/Test.cpp
+        -:    0:Graph:/home/hkn_krz/CYK/cmake-build-debug-coverage/CMakeFiles/Test.dir/Test.cpp.gcno
+        -:    0:Data:/home/hkn_krz/CYK/cmake-build-debug-coverage/CMakeFiles/Test.dir/Test.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "source.hpp"
+        -:    2:#include <gtest/gtest.h>
+        -:    3:#include <vector>
+        -:    4:
+        2:    5:TEST(Build, Default) {
+        1:    6:  auto gram = Gram();
+        -:    7:  std::vector<std::pair<std::string, std::string>> data = {
+        2:    8:      std::make_pair("S", "AS"), std::make_pair("A", "CD"),
+        2:    9:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:   10:      std::make_pair("E", ")")
+        -:   11:
+       11:   12:  };
+        1:   13:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        -:   14:
+        1:   15:  char start = 'S';
+       1*:   16:  ASSERT_NO_THROW(gram.Build(data, nonterm, start));
+        -:   17:}
+------------------
+_ZN18Build_Default_Test8TestBodyEv:
+function _ZN18Build_Default_Test8TestBodyEv called 1 returned 100% blocks executed 44%
+        1:    5:TEST(Build, Default) {
+        1:    6:  auto gram = Gram();
+        1:    6-block  0
+call    0 returned 1
+    $$$$$:    6-block  1
+call    1 never executed
+        -:    7:  std::vector<std::pair<std::string, std::string>> data = {
+        2:    8:      std::make_pair("S", "AS"), std::make_pair("A", "CD"),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    8-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:    8-block  1
+    $$$$$:    8-block  2
+        2:    9:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:    9-block  2
+    $$$$$:    9-block  3
+        1:   10:      std::make_pair("E", ")")
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   10-block  1
+        -:   11:
+       11:   12:  };
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   12-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   12-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   12-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   12-block  5
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        5:   12-block  6
+call   19 returned 5
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+call   20 never executed
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+call   21 never executed
+        1:   13:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        1:   13-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   13-block  1
+    $$$$$:   13-block  2
+    $$$$$:   13-block  3
+call    4 never executed
+        -:   14:
+        1:   15:  char start = 'S';
+       1*:   16:  ASSERT_NO_THROW(gram.Build(data, nonterm, start));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16-block  0
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        1:   16-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   16-block  2
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0
+        1:   16-block  3
+call   10 returned 1
+    %%%%%:   16-block  4
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   16-block  5
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   16-block  6
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   16-block  7
+call   20 never executed
+call   21 never executed
+    $$$$$:   16-block  8
+    $$$$$:   16-block  9
+call   22 never executed
+call   23 never executed
+branch 24 never executed
+branch 25 never executed
+    $$$$$:   16-block 10
+call   26 never executed
+    $$$$$:   16-block 11
+    $$$$$:   16-block 12
+call   27 never executed
+    $$$$$:   16-block 13
+        -:   17:}
+------------------
+_ZN18Build_Default_TestC2Ev:
+function _ZN18Build_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:    5:TEST(Build, Default) {
+        1:    5-block  0
+call    0 returned 1
+------------------
+        -:   18:
+        2:   19:TEST(CheckGram, Default) {
+        1:   20:  auto gram = Gram();
+        -:   21:  std::vector<std::pair<std::string, std::string>> data = {
+        2:   22:      std::make_pair("S", "AS"), std::make_pair("A", "CD"),
+        2:   23:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:   24:      std::make_pair("E", ")")
+        -:   25:
+       11:   26:  };
+        1:   27:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        -:   28:
+        1:   29:  char start = 'S';
+        1:   30:  gram.Build(data, nonterm, start);
+       1*:   31:  ASSERT_TRUE(gram.CheckGram());
+        -:   32:}
+------------------
+_ZN22CheckGram_Default_Test8TestBodyEv:
+function _ZN22CheckGram_Default_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+        1:   19:TEST(CheckGram, Default) {
+        1:   20:  auto gram = Gram();
+        1:   20-block  0
+call    0 returned 1
+    $$$$$:   20-block  1
+call    1 never executed
+        -:   21:  std::vector<std::pair<std::string, std::string>> data = {
+        2:   22:      std::make_pair("S", "AS"), std::make_pair("A", "CD"),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   22-block  1
+    $$$$$:   22-block  2
+        2:   23:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   23-block  2
+    $$$$$:   23-block  3
+        1:   24:      std::make_pair("E", ")")
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   24-block  1
+        -:   25:
+       11:   26:  };
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   26-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   26-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   26-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   26-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   26-block  5
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        5:   26-block  6
+call   19 returned 5
+    $$$$$:   26-block  7
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+call   20 never executed
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+call   21 never executed
+        1:   27:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        1:   27-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   27-block  1
+    $$$$$:   27-block  2
+    $$$$$:   27-block  3
+call    4 never executed
+        -:   28:
+        1:   29:  char start = 'S';
+        1:   30:  gram.Build(data, nonterm, start);
+call    0 returned 1
+       1*:   31:  ASSERT_TRUE(gram.CheckGram());
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   31-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   31-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   31-block  2
+call   11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   31-block  3
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:   31-block  4
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:   31-block  5
+call   21 never executed
+    $$$$$:   31-block  6
+    $$$$$:   31-block  7
+call   22 never executed
+    $$$$$:   31-block  8
+    $$$$$:   31-block  9
+call   23 never executed
+    $$$$$:   31-block 10
+    $$$$$:   31-block 11
+call   24 never executed
+        -:   32:}
+------------------
+_ZN22CheckGram_Default_TestC2Ev:
+function _ZN22CheckGram_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   19:TEST(CheckGram, Default) {
+        1:   19-block  0
+call    0 returned 1
+------------------
+        2:   33:TEST(CheckGram, UncorrectGram) {
+        1:   34:  auto gram = Gram();
+        -:   35:  std::vector<std::pair<std::string, std::string>> data = {
+        2:   36:      std::make_pair("S", "AS"), std::make_pair("A", "CDE"),
+        2:   37:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:   38:      std::make_pair("E", ")")
+        -:   39:
+       11:   40:  };
+        1:   41:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        -:   42:
+        1:   43:  char start = 'S';
+        1:   44:  gram.Build(data, nonterm, start);
+       1*:   45:  ASSERT_FALSE(gram.CheckGram());
+        -:   46:}
+------------------
+_ZN28CheckGram_UncorrectGram_Test8TestBodyEv:
+function _ZN28CheckGram_UncorrectGram_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+        1:   33:TEST(CheckGram, UncorrectGram) {
+        1:   34:  auto gram = Gram();
+        1:   34-block  0
+call    0 returned 1
+    $$$$$:   34-block  1
+call    1 never executed
+        -:   35:  std::vector<std::pair<std::string, std::string>> data = {
+        2:   36:      std::make_pair("S", "AS"), std::make_pair("A", "CDE"),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   36-block  1
+    $$$$$:   36-block  2
+        2:   37:      std::make_pair("D", "SE"), std::make_pair("C", "("),
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   37-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   37-block  2
+    $$$$$:   37-block  3
+        1:   38:      std::make_pair("E", ")")
+        1:   38-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   38-block  1
+        -:   39:
+       11:   40:  };
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   40-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   40-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   40-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   40-block  5
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        5:   40-block  6
+call   19 returned 5
+    $$$$$:   40-block  7
+    $$$$$:   40-block  8
+    $$$$$:   40-block  9
+call   20 never executed
+    $$$$$:   40-block 10
+    $$$$$:   40-block 11
+call   21 never executed
+        1:   41:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E'};
+        1:   41-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   41-block  1
+    $$$$$:   41-block  2
+    $$$$$:   41-block  3
+call    4 never executed
+        -:   42:
+        1:   43:  char start = 'S';
+        1:   44:  gram.Build(data, nonterm, start);
+call    0 returned 1
+       1*:   45:  ASSERT_FALSE(gram.CheckGram());
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   45-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   45-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   45-block  2
+call   11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   45-block  3
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:   45-block  4
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:   45-block  5
+call   21 never executed
+    $$$$$:   45-block  6
+    $$$$$:   45-block  7
+call   22 never executed
+    $$$$$:   45-block  8
+    $$$$$:   45-block  9
+call   23 never executed
+    $$$$$:   45-block 10
+    $$$$$:   45-block 11
+call   24 never executed
+        -:   46:}
+------------------
+_ZN28CheckGram_UncorrectGram_TestC2Ev:
+function _ZN28CheckGram_UncorrectGram_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   33:TEST(CheckGram, UncorrectGram) {
+        1:   33-block  0
+call    0 returned 1
+------------------
+        -:   47:
+        -:   48:
+        2:   49:TEST(CYK, Default) {
+        1:   50:  auto gram = Gram();
+        -:   51:  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
+        2:   52:      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
+        2:   53:      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
+        2:   54:      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
+        2:   55:      std::make_pair("C", "("),  std::make_pair("E", ")"),
+        2:   56:      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
+        1:   57:      std::make_pair("A", "CE")
+        -:   58:
+       23:   59:  };
+        1:   60:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+        -:   61:
+        1:   62:  char start = 'S';
+        1:   63:  gram.Build(data, nonterm, start);
+        -:   64:
+       1*:   65:  ASSERT_TRUE(gram.CYK("()"));
+        -:   66:}
+------------------
+_ZN16CYK_Default_Test8TestBodyEv:
+function _ZN16CYK_Default_Test8TestBodyEv called 1 returned 100% blocks executed 45%
+        1:   49:TEST(CYK, Default) {
+        1:   50:  auto gram = Gram();
+        1:   50-block  0
+call    0 returned 1
+    $$$$$:   50-block  1
+call    1 never executed
+        -:   51:  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
+        2:   52:      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   52-block  1
+    $$$$$:   52-block  2
+        2:   53:      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   53-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   53-block  2
+    $$$$$:   53-block  3
+        2:   54:      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   54-block  2
+    $$$$$:   54-block  3
+        2:   55:      std::make_pair("C", "("),  std::make_pair("E", ")"),
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   55-block  2
+    $$$$$:   55-block  3
+        2:   56:      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   56-block  2
+    $$$$$:   56-block  3
+        1:   57:      std::make_pair("A", "CE")
+        1:   57-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   57-block  1
+        -:   58:
+       23:   59:  };
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   59-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   59-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   59-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   59-block  5
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   59-block  6
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   59-block  7
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   59-block  8
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:   59-block  9
+call   27 returned 1
+branch 28 taken 1 (fallthrough)
+branch 29 taken 0 (throw)
+        1:   59-block 10
+call   30 returned 1
+branch 31 taken 1 (fallthrough)
+branch 32 taken 0 (throw)
+        1:   59-block 11
+call   33 returned 1
+call   34 returned 1
+branch 35 taken 1 (fallthrough)
+branch 36 taken 0 (throw)
+       11:   59-block 12
+call   37 returned 11
+    $$$$$:   59-block 13
+    $$$$$:   59-block 14
+    $$$$$:   59-block 15
+call   38 never executed
+    $$$$$:   59-block 16
+    $$$$$:   59-block 17
+call   39 never executed
+        1:   60:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+        1:   60-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   60-block  1
+    $$$$$:   60-block  2
+    $$$$$:   60-block  3
+call    4 never executed
+        -:   61:
+        1:   62:  char start = 'S';
+        1:   63:  gram.Build(data, nonterm, start);
+call    0 returned 1
+        -:   64:
+       1*:   65:  ASSERT_TRUE(gram.CYK("()"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   65-block  0
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+    %%%%%:   65-block  1
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   65-block  2
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   65-block  3
+call   17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:   65-block  4
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:   65-block  5
+call   24 never executed
+call   25 never executed
+call   26 never executed
+    $$$$$:   65-block  6
+    $$$$$:   65-block  7
+call   27 never executed
+    $$$$$:   65-block  8
+    $$$$$:   65-block  9
+call   28 never executed
+    $$$$$:   65-block 10
+    $$$$$:   65-block 11
+call   29 never executed
+    $$$$$:   65-block 12
+    $$$$$:   65-block 13
+call   30 never executed
+        -:   66:}
+------------------
+_ZN16CYK_Default_TestC2Ev:
+function _ZN16CYK_Default_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   49:TEST(CYK, Default) {
+        1:   49-block  0
+call    0 returned 1
+------------------
+        -:   67:
+        2:   68:TEST(CYK, LongExpr) {
+        1:   69:  auto gram = Gram();
+        -:   70:  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
+        2:   71:      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
+        2:   72:      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
+        2:   73:      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
+        2:   74:      std::make_pair("C", "("),  std::make_pair("E", ")"),
+        2:   75:      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
+        1:   76:      std::make_pair("A", "CE")
+        -:   77:
+       23:   78:  };
+        1:   79:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+        -:   80:
+        1:   81:  char start = 'S';
+        1:   82:  gram.Build(data, nonterm, start);
+        -:   83:
+       1*:   84:  ASSERT_TRUE(gram.CYK("(()())(())()"));
+        -:   85:}
+------------------
+_ZN17CYK_LongExpr_Test8TestBodyEv:
+function _ZN17CYK_LongExpr_Test8TestBodyEv called 1 returned 100% blocks executed 45%
+        1:   68:TEST(CYK, LongExpr) {
+        1:   69:  auto gram = Gram();
+        1:   69-block  0
+call    0 returned 1
+    $$$$$:   69-block  1
+call    1 never executed
+        -:   70:  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
+        2:   71:      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   71-block  1
+    $$$$$:   71-block  2
+        2:   72:      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   72-block  2
+    $$$$$:   72-block  3
+        2:   73:      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   73-block  2
+    $$$$$:   73-block  3
+        2:   74:      std::make_pair("C", "("),  std::make_pair("E", ")"),
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   74-block  2
+    $$$$$:   74-block  3
+        2:   75:      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   75-block  2
+    $$$$$:   75-block  3
+        1:   76:      std::make_pair("A", "CE")
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   76-block  1
+        -:   77:
+       23:   78:  };
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   78-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   78-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   78-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   78-block  5
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   78-block  6
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   78-block  7
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   78-block  8
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:   78-block  9
+call   27 returned 1
+branch 28 taken 1 (fallthrough)
+branch 29 taken 0 (throw)
+        1:   78-block 10
+call   30 returned 1
+branch 31 taken 1 (fallthrough)
+branch 32 taken 0 (throw)
+        1:   78-block 11
+call   33 returned 1
+call   34 returned 1
+branch 35 taken 1 (fallthrough)
+branch 36 taken 0 (throw)
+       11:   78-block 12
+call   37 returned 11
+    $$$$$:   78-block 13
+    $$$$$:   78-block 14
+    $$$$$:   78-block 15
+call   38 never executed
+    $$$$$:   78-block 16
+    $$$$$:   78-block 17
+call   39 never executed
+        1:   79:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   79-block  1
+    $$$$$:   79-block  2
+    $$$$$:   79-block  3
+call    4 never executed
+        -:   80:
+        1:   81:  char start = 'S';
+        1:   82:  gram.Build(data, nonterm, start);
+call    0 returned 1
+        -:   83:
+       1*:   84:  ASSERT_TRUE(gram.CYK("(()())(())()"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   84-block  0
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+    %%%%%:   84-block  1
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   84-block  2
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   84-block  3
+call   17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:   84-block  4
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:   84-block  5
+call   24 never executed
+call   25 never executed
+call   26 never executed
+    $$$$$:   84-block  6
+    $$$$$:   84-block  7
+call   27 never executed
+    $$$$$:   84-block  8
+    $$$$$:   84-block  9
+call   28 never executed
+    $$$$$:   84-block 10
+    $$$$$:   84-block 11
+call   29 never executed
+    $$$$$:   84-block 12
+    $$$$$:   84-block 13
+call   30 never executed
+        -:   85:}
+------------------
+_ZN17CYK_LongExpr_TestC2Ev:
+function _ZN17CYK_LongExpr_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   68:TEST(CYK, LongExpr) {
+        1:   68-block  0
+call    0 returned 1
+------------------
+        -:   86:
+        2:   87:TEST(CYK, IncorrectWord) {
+        1:   88:  auto gram = Gram();
+        -:   89:  std::vector<std::pair<std::string, std::string>> data = { // ПСП в НФ Хомского
+        2:   90:      std::make_pair("S", "AB"), std::make_pair("S", "CE"),
+        2:   91:      std::make_pair("S", "CF"), std::make_pair("F", "BE"),
+        2:   92:      std::make_pair("A", "CD"), std::make_pair("D", "BE"),
+        2:   93:      std::make_pair("C", "("),  std::make_pair("E", ")"),
+        2:   94:      std::make_pair("B", "AB"), std::make_pair("B", "CE"),
+        1:   95:      std::make_pair("A", "CE")
+        -:   96:
+       23:   97:  };
+        1:   98:  std::vector<char> nonterm = {'S', 'A', 'B', 'C', 'D', 'E', 'F'};
+        -:   99:
+        1:  100:  char start = 'S';
+        1:  101:  gram.Build(data, nonterm, start);
+       1*:  102:  ASSERT_FALSE(gram.CYK("))(("));
+        -:  103:}

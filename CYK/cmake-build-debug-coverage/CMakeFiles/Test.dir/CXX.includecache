@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hkn_krz/CYK/Test.cpp
+source.hpp
+/home/hkn_krz/CYK/source.hpp
+gtest/gtest.h
+-
+vector
+-
+
+/home/hkn_krz/CYK/source.hpp
+map
+-
+set
+-
+string
+-
+unordered_map
+-
+vector
+-
+
