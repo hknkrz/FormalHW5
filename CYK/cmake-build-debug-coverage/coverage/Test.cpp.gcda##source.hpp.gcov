@@ -1,0 +1,413 @@
+        -:    0:Source:/home/hkn_krz/CYK/source.hpp
+        -:    0:Graph:/home/hkn_krz/CYK/cmake-build-debug-coverage/CMakeFiles/Test.dir/Test.cpp.gcno
+        -:    0:Data:/home/hkn_krz/CYK/cmake-build-debug-coverage/CMakeFiles/Test.dir/Test.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <map>
+        -:    3:#include <set>
+        -:    4:#include <string>
+        -:    5:#include <unordered_map>
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:class Gram {
+        -:    9:public:
+function _ZN4GramC2Ev called 6 returned 100% blocks executed 100%
+        6:   10:  Gram() = default;
+        6:   10-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        -:   11:  void Build(const std::vector<std::pair<std::string, std::string>> &data,
+        -:   12:             const std::vector<char> &non_term, const char &start) noexcept;
+function _ZN4GramD2Ev called 6 returned 100% blocks executed 100%
+        6:   13:  ~Gram() = default;
+        6:   13-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        -:   14:
+        -:   15:  bool CheckGram() noexcept;
+        -:   16:  bool CYK(std::string word) noexcept;
+        -:   17:
+        -:   18:private:
+        -:   19:  std::map<std::string, std::set<std::string>> rul_;
+        -:   20:  std::map<std::string, std::set<std::string>> rev_rul_;
+        -:   21:  std::set<char> non_term_;
+        -:   22:  std::unordered_map<char, int> indexes_;
+        -:   23:  char start_{};
+        -:   24:};
+function _ZN4Gram9CheckGramEv called 2 returned 100% blocks executed 86%
+        2:   25:bool Gram::CheckGram() noexcept{
+        7:   26:  for (const auto &root : rul_) {
+        2:   26-block  0
+call    0 returned 2
+call    1 returned 2
+        7:   26-block  1
+call    2 returned 7
+branch  3 taken 6 (fallthrough)
+branch  4 taken 1
+        6:   26-block  2
+call    5 returned 6
+        5:   26-block  3
+call    6 returned 5
+        6:   27:    if (root.first.size() != 1) {
+call    0 returned 6
+branch  1 taken 0 (fallthrough)
+branch  2 taken 6
+       1*:   28:      return false;
+    %%%%%:   28-block  0
+        1:   28-block  1
+        -:   29:    }
+       11:   30:    for (auto right_part : root.second) {
+        6:   30-block  0
+call    0 returned 6
+call    1 returned 6
+       11:   30-block  1
+call    2 returned 11
+branch  3 taken 6 (fallthrough)
+branch  4 taken 5
+        6:   30-block  2
+call    5 returned 6
+call    6 returned 6
+        5:   30-block  3
+call    7 returned 5
+        6:   31:      if (right_part.size() > 2) {
+call    0 returned 6
+branch  1 taken 1 (fallthrough)
+branch  2 taken 5
+        1:   32:        return false;
+        1:   32-block  0
+        -:   33:      }
+        5:   34:      if (right_part.size() == 1) {
+        5:   34-block  0
+call    0 returned 5
+branch  1 taken 2 (fallthrough)
+branch  2 taken 3
+        2:   35:        if (non_term_.find(right_part[0]) != non_term_.end()) {
+        2:   35-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 0 (fallthrough)
+branch  5 taken 2
+    #####:   36:          return false;
+    %%%%%:   36-block  0
+        -:   37:        }
+       2*:   38:        if (right_part[0] == '1' && root.first[0] != start_) {
+        2:   38-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    %%%%%:   38-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   38-block  2
+        2:   38-block  3
+        2:   38-block  4
+branch  6 taken 0 (fallthrough)
+branch  7 taken 2
+    #####:   39:          return false;
+    %%%%%:   39-block  0
+        -:   40:        }
+        -:   41:      }
+        5:   42:      if (right_part.size() == 2) {
+        5:   42-block  0
+call    0 returned 5
+branch  1 taken 3 (fallthrough)
+branch  2 taken 2
+       6*:   43:        if ((non_term_.find(right_part[0]) == non_term_.end()) ||
+        3:   43-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0
+branch  6 taken 0 (fallthrough)
+branch  7 taken 3
+    %%%%%:   43-block  1
+        3:   43-block  2
+        6:   44:            (non_term_.find(right_part[1]) == non_term_.end())) {
+        3:   44-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+        3:   44-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 3
+    #####:   45:          return false;
+    %%%%%:   45-block  0
+        -:   46:        }
+        -:   47:      }
+        -:   48:    }
+        -:   49:  }
+        1:   50:  return true;
+        1:   50-block  0
+        -:   51:}
+function _ZN4Gram5BuildERKSt6vectorISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ESaIS8_EERKS0_IcS6_ERKc called 6 returned 100% blocks executed 100%
+        6:   52:void Gram::Build(const std::vector<std::pair<std::string, std::string>> &data,
+        -:   53:                 const std::vector<char> &non_term, const char &start) noexcept{
+       54:   54:  for (const auto &pair : data) {
+        6:   54-block  0
+call    0 returned 6
+call    1 returned 6
+       54:   54-block  1
+call    2 returned 54
+branch  3 taken 48 (fallthrough)
+branch  4 taken 6
+       48:   54-block  2
+call    5 returned 48
+       48:   55:    rul_.insert(std::make_pair(pair.first, std::set<std::string>()));
+call    0 returned 48
+call    1 returned 48
+call    2 returned 48
+call    3 returned 48
+call    4 returned 48
+       48:   56:    rev_rul_.insert(std::make_pair(pair.second, std::set<std::string>()));
+call    0 returned 48
+call    1 returned 48
+call    2 returned 48
+call    3 returned 48
+call    4 returned 48
+call    5 returned 48
+        -:   57:  }
+       54:   58:  for (const auto &pair : data) {
+        6:   58-block  0
+call    0 returned 6
+call    1 returned 6
+       54:   58-block  1
+call    2 returned 54
+branch  3 taken 48 (fallthrough)
+branch  4 taken 6
+       48:   58-block  2
+call    5 returned 48
+call    6 returned 48
+       48:   59:    rul_[pair.first].insert(pair.second);
+call    0 returned 48
+call    1 returned 48
+       48:   60:    rev_rul_[pair.second].insert(pair.first);
+call    0 returned 48
+call    1 returned 48
+        -:   61:  }
+        6:   62:  int i = 0;
+        -:   63:
+       45:   64:  for (auto element : non_term) {
+        6:   64-block  0
+call    0 returned 6
+call    1 returned 6
+       45:   64-block  1
+call    2 returned 45
+branch  3 taken 39 (fallthrough)
+branch  4 taken 6
+       39:   64-block  2
+call    5 returned 39
+       39:   65:    non_term_.insert(element);
+call    0 returned 39
+       39:   66:    indexes_.insert(std::make_pair(element, i));
+call    0 returned 39
+call    1 returned 39
+       39:   67:    ++i;
+call    0 returned 39
+        -:   68:  }
+        -:   69:
+        6:   70:  start_ = start;
+        6:   71:}
+function _ZN4Gram3CYKENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 100%
+        3:   72:bool Gram::CYK(std::string word) noexcept{
+        3:   73:  std::vector<std::vector<std::vector<bool>>> table;
+        3:   73-block  0
+call    0 returned 3
+        3:   74:  table.reserve(word.size() * sizeof(std::vector<std::vector<bool>>));
+call    0 returned 3
+call    1 returned 3
+       24:   75:  for (int i = 0; i < non_term_.size(); ++i) {
+       24:   75-block  0
+call    0 returned 24
+branch  1 taken 21 (fallthrough)
+branch  2 taken 3
+       21:   76:    auto v1 = new std::vector<std::vector<bool>>;
+       21:   76-block  0
+call    0 returned 21
+call    1 returned 21
+       21:   77:    v1->reserve(word.size() * sizeof(std::vector<bool>));
+call    0 returned 21
+call    1 returned 21
+      147:   78:    for (int j = 0; j < word.size(); ++j) {
+      147:   78-block  0
+call    0 returned 147
+branch  1 taken 126 (fallthrough)
+branch  2 taken 21
+      126:   79:      auto v2 = new std::vector<bool>(word.size(), false);
+      126:   79-block  0
+call    0 returned 126
+call    1 returned 126
+call    2 returned 126
+call    3 returned 126
+call    4 returned 126
+      126:   80:      v1->push_back(*v2);
+call    0 returned 126
+        -:   81:    }
+       21:   82:    table.push_back(*v1);
+       21:   82-block  0
+call    0 returned 21
+        -:   83:  }
+       21:   84:  for (int k = 0; k < word.size(); ++k) {
+        3:   84-block  0
+       21:   84-block  1
+call    0 returned 21
+branch  1 taken 18 (fallthrough)
+branch  2 taken 3
+       36:   85:    std::string cur_letter;
+       18:   85-block  0
+call    0 returned 18
+       18:   85-block  1
+call    1 returned 18
+       18:   86:    cur_letter += word[k];
+call    0 returned 18
+call    1 returned 18
+       18:   87:    if (rev_rul_.find(cur_letter) != rev_rul_.end()) {
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+branch  3 taken 18 (fallthrough)
+branch  4 taken 0
+       36:   88:      for (auto non_term : rev_rul_[cur_letter]) {
+       18:   88-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+       36:   88-block  1
+call    3 returned 36
+branch  4 taken 18 (fallthrough)
+branch  5 taken 18
+       18:   88-block  2
+call    6 returned 18
+call    7 returned 18
+call    8 returned 18
+       18:   89:        table[indexes_[non_term[0]]][k][k] = true;
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+call    3 returned 18
+call    4 returned 18
+call    5 returned 18
+call    6 returned 18
+        -:   90:      }
+        -:   91:    }
+        -:   92:  }
+       18:   93:  for (int k = 1; k < word.size(); ++k) {
+        3:   93-block  0
+       18:   93-block  1
+call    0 returned 18
+branch  1 taken 15 (fallthrough)
+branch  2 taken 3
+       15:   93-block  2
+       88:   94:    for (int i = 0; i < word.size() - k; ++i) {
+       15:   94-block  0
+       88:   94-block  1
+call    0 returned 88
+branch  1 taken 73 (fallthrough)
+branch  2 taken 15
+       73:   94-block  2
+       73:   95:      int j = i + k;
+      584:   96:      for (const auto &rule : rul_) {
+       73:   96-block  0
+call    0 returned 73
+call    1 returned 73
+      584:   96-block  1
+call    2 returned 584
+branch  3 taken 511 (fallthrough)
+branch  4 taken 73
+      511:   96-block  2
+call    5 returned 511
+      511:   96-block  3
+call    6 returned 511
+      511:   97:        if (!table[indexes_[rule.first[0]]][i][j]) {
+call    0 returned 511
+call    1 returned 511
+call    2 returned 511
+call    3 returned 511
+call    4 returned 511
+call    5 returned 511
+branch  6 taken 511 (fallthrough)
+branch  7 taken 0
+      511:   98:          bool result = false;
+     1314:   99:          for (auto right_part : rule.second) {
+      511:   99-block  0
+call    0 returned 511
+call    1 returned 511
+     1314:   99-block  1
+call    2 returned 1314
+branch  3 taken 803 (fallthrough)
+branch  4 taken 511
+      803:   99-block  2
+call    5 returned 803
+call    6 returned 803
+      803:   99-block  3
+call    7 returned 803
+call    8 returned 803
+      803:  100:            if (right_part.size() == 2) {
+call    0 returned 803
+branch  1 taken 657 (fallthrough)
+branch  2 taken 146
+     3330:  101:              for (int x = i; x < j; ++x) {
+      657:  101-block  0
+     3330:  101-block  1
+branch  0 taken 2673 (fallthrough)
+branch  1 taken 657
+     5545:  102:                result = result || (table[indexes_[right_part[0]]][i][x] &&
+     2673:  102-block  0
+branch  0 taken 2577 (fallthrough)
+branch  1 taken 96
+     2577:  102-block  1
+call    2 returned 2577
+call    3 returned 2577
+call    4 returned 2577
+call    5 returned 2577
+call    6 returned 2577
+branch  7 taken 295 (fallthrough)
+branch  8 taken 2282
+branch  9 taken 31 (fallthrough)
+branch 10 taken 264
+      127:  102-block  2
+     2546:  102-block  3
+     5545:  103:                         table[indexes_[right_part[1]]][x + 1][j]);
+call    0 returned 2577
+      295:  103-block  0
+call    1 returned 295
+call    2 returned 295
+call    3 returned 295
+call    4 returned 295
+call    5 returned 295
+call    6 returned 295
+     2673:  103-block  1
+        -:  104:              }
+        -:  105:            }
+        -:  106:          }
+      511:  107:          table[indexes_[rule.first[0]]][i][j] = result;
+      511:  107-block  0
+call    0 returned 511
+call    1 returned 511
+call    2 returned 511
+call    3 returned 511
+call    4 returned 511
+call    5 returned 511
+        -:  108:        }
+        -:  109:      }
+        -:  110:    }
+        -:  111:  }
+        3:  112:  return table[indexes_[start_]][0][word.size() - 1];
+        3:  112-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+        -:  113:}
